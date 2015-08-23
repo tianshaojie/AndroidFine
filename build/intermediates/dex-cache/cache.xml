@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="F:\workspace-android-bymonster\AndroidFine\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="F:\workspace-android-bymonster\AndroidFine\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-b75d7c818d9c5f67bfb9309f171fd62b4da69b9b.jar" />
+    </item>
+    <item
+        jar="C:\Users\monster\.gradle\caches\modules-2\files-2.1\com.alibaba\fastjson\1.1.34.android\bef1d1224be099c387794bce1bdf81b38f37c6ce\fastjson-1.1.34.android.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="bef1d1224be099c387794bce1bdf81b38f37c6ce">
+        <dex dex="F:\workspace-android-bymonster\AndroidFine\app\build\intermediates\pre-dexed\debug\fastjson-1.1.34.android-476b90e4ae2b59ef1b4d2f9d86dc1b344790b3fd.jar" />
+    </item>
+    <item
+        jar="C:\Users\monster\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp\okhttp\2.4.0\40340c0748190fe897baf7bffbc1b282734294e5\okhttp-2.4.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="40340c0748190fe897baf7bffbc1b282734294e5">
+        <dex dex="F:\workspace-android-bymonster\AndroidFine\app\build\intermediates\pre-dexed\debug\okhttp-2.4.0-b0de46c4f0ed3ec6abb56157f3ced30113d98164.jar" />
+    </item>
+    <item
+        jar="C:\Users\monster\.gradle\caches\modules-2\files-2.1\com.readystatesoftware.systembartint\systembartint\1.0.3\de4f7404e2f58d8f6e83cb1e85d0c2d6c2987287\systembartint-1.0.3.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="de4f7404e2f58d8f6e83cb1e85d0c2d6c2987287">
+        <dex dex="F:\workspace-android-bymonster\AndroidFine\app\build\intermediates\pre-dexed\debug\systembartint-1.0.3-cfe17c4b4067c5304f0eebacd3d131e154a45408.jar" />
+    </item>
+    <item
+        jar="C:\Users\monster\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife\7.0.1\d5d13ea991eab0252e3710e5df3d6a9d4b21d461\butterknife-7.0.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
+        <dex dex="F:\workspace-android-bymonster\AndroidFine\app\build\intermediates\pre-dexed\debug\butterknife-7.0.1-0f0ffd869cc3733535b64d5e5dc1d573a960074d.jar" />
+    </item>
+    <item
+        jar="C:\Users\monster\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.4.0\5b72bf48563ea8410e650de14aa33ff69a3e8c35\okio-1.4.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="5b72bf48563ea8410e650de14aa33ff69a3e8c35">
+        <dex dex="F:\workspace-android-bymonster\AndroidFine\app\build\intermediates\pre-dexed\debug\okio-1.4.0-df21c6dc57fb0e77e260c4400bf8eeb60cce0a0f.jar" />
+    </item>
+    <item
+        jar="F:\workspace-android-bymonster\AndroidFine\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="F:\workspace-android-bymonster\AndroidFine\app\build\intermediates\pre-dexed\debug\classes-e835b35d65856a7cef597f78670e56f8cade4529.jar" />
+    </item>
+    <item
+        jar="G:\Users\monster\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="F:\workspace-android-bymonster\AndroidFine\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-f84bf69664d36b20d1da0e7f8083c8eeed8941d2.jar" />
+    </item>
+    <item
+        jar="C:\Users\monster\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="F:\workspace-android-bymonster\AndroidFine\app\build\intermediates\pre-dexed\debug\picasso-2.5.2-85ac0c19a0221d2cd19284d052c2c7791eb77655.jar" />
+    </item>
+    <item
+        jar="C:\Users\monster\.gradle\caches\modules-2\files-2.1\com.j256.ormlite\ormlite-core\4.48\e579bd2905d0399af5029aaaf9817d5fa0ca88a5\ormlite-core-4.48.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e579bd2905d0399af5029aaaf9817d5fa0ca88a5">
+        <dex dex="F:\workspace-android-bymonster\AndroidFine\app\build\intermediates\pre-dexed\debug\ormlite-core-4.48-b7d5b78064ceffe32d1cc617924897b54b928b05.jar" />
+    </item>
+    <item
+        jar="C:\Users\monster\.gradle\caches\modules-2\files-2.1\com.j256.ormlite\ormlite-android\4.48\afa06f539a4026c10b247386312aa67404b80a16\ormlite-android-4.48.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="afa06f539a4026c10b247386312aa67404b80a16">
+        <dex dex="F:\workspace-android-bymonster\AndroidFine\app\build\intermediates\pre-dexed\debug\ormlite-android-4.48-3e19e0ba57455e7c66cb8cbd3780e0e01a215972.jar" />
+    </item>
+
+</items>
