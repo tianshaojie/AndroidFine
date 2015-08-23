@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="@color/white">
+
+	<com.yuzhi.fine.ui.tabstrip.PagerSlidingTabStrip
+			android:id="@+id/tabs"
+			android:layout_width="match_parent"
+			android:layout_height="38dip"
+			app:pstsIndicatorColor="@android:color/holo_blue_light"
+			app:selectedTabTextColor="@android:color/holo_blue_light"
+			app:tabTextSize="@dimen/text_size_14"
+			app:tabTextColor="@color/black"
+			app:pstsUnderlineHeight="0.5dp"
+			app:pstsUnderlineColor="@color/gray_light"
+			app:pstsTabPaddingLeftRight="12dp"
+			app:pstsIndicatorHeight="2dp"
+			app:pstsDividerColor="@android:color/transparent"/>
+
+	<android.support.v4.view.ViewPager
+			android:id="@+id/pager"
+			android:layout_width="fill_parent"
+			android:layout_height="0dp"
+			android:layout_weight="1"/>
+
+</LinearLayout>

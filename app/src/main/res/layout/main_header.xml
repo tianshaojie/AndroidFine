@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_header"
+    android:layout_width="match_parent"
+    android:layout_height="48dip"
+    android:background="@color/main_header_bg">
+
+    <!-- 返回按钮 -->
+
+    <Button
+        android:id="@+id/btnBack"
+        style="@style/title_base_button"
+        android:background="@drawable/btn_back"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/textHeadTitle"
+        style="@style/main_head_title"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:clickable="true"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:maxWidth="180dp"
+        android:singleLine="true"
+        android:text="AndroidFine"
+        android:textColor="@color/main_head_title"
+        android:textSize="@dimen/text_size_20" />
+
+</RelativeLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical">
+
+	<!--
+	<include
+			layout="@layout/loading"
+			android:visibility="gone"/>
+	-->
+	<com.yuzhi.fine.ui.pulltorefresh.PullToRefreshListView
+			xmlns:ptr="http://schemas.android.com/apk/res-auto"
+			android:id="@+id/listView"
+			ptr:ptrAnimationStyle="flip"
+			ptr:ptrHeaderTextColor="@color/gray"
+			ptr:ptrListViewExtrasEnabled="true"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"/>
+
+</LinearLayout>

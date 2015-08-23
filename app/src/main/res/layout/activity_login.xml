@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:fitsSystemWindows="true"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<RelativeLayout
+		android:background="@drawable/login_bg"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+	<RelativeLayout
+		android:id="@+id/rl_1"
+		android:layout_width="fill_parent"
+		android:layout_height="90.0dip"
+		android:layout_marginLeft="18.0dip"
+		android:layout_marginRight="18.0dip"
+		android:layout_marginTop="200.0dip"
+		android:background="@drawable/login_rect_white">
+
+		<RelativeLayout
+			android:id="@+id/layoutPhone"
+			android:layout_width="fill_parent"
+			android:layout_height="45.0dip">
+
+			<ImageView
+				android:id="@+id/imgPhone"
+				android:layout_width="15.0dip"
+				android:layout_height="18.0dip"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="10.0dip"
+				android:background="@drawable/login_phone" />
+
+			<EditText
+				android:id="@+id/phone"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:layout_toRightOf="@+id/imgPhone"
+				android:background="@null"
+				android:hint="手机号"
+				android:inputType="number"
+				android:maxLength="11"
+				android:paddingLeft="15.0dip"
+				android:singleLine="true"
+				android:textColor="#ff111111"
+				android:textColorHint="#ffaaaaaa"
+				android:textSize="16.0sp" />
+
+			<ImageView
+				android:id="@+id/imgCancel"
+				android:layout_width="16.0dip"
+				android:layout_height="16.0dip"
+				android:layout_alignParentRight="true"
+				android:layout_centerVertical="true"
+				android:layout_marginRight="12.0dip"
+				android:background="@drawable/cancel_phone"
+				android:visibility="invisible" />
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="45.0dip"
+			android:layout_below="@+id/layoutPhone">
+
+			<ImageView
+				android:layout_width="fill_parent"
+				android:layout_height="0.5dip"
+				android:background="#ffdddddd" />
+
+			<ImageView
+				android:id="@+id/imgCode"
+				android:layout_width="15.0dip"
+				android:layout_height="18.0dip"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="10.0dip"
+				android:background="@drawable/login_lock" />
+
+			<EditText
+				android:id="@+id/code"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:layout_toRightOf="@+id/imgCode"
+				android:background="@null"
+				android:hint="验证码"
+				android:inputType="number"
+				android:maxLength="6"
+				android:paddingLeft="15.0dip"
+				android:singleLine="true"
+				android:textColor="#ff111111"
+				android:textColorHint="#ffaaaaaa"
+				android:textSize="16.0sp" />
+
+			<Button
+				android:id="@+id/btnGetCode"
+				android:layout_width="94.0dip"
+				android:layout_height="33.0dip"
+				android:layout_alignParentRight="true"
+				android:layout_centerVertical="true"
+				android:layout_marginRight="10.0dip"
+				android:background="@drawable/login_yzm_oval_shape_gray"
+				android:clickable="false"
+				android:enabled="false"
+				android:text="获取验证码"
+				android:textColor="#ff888888"
+				android:textSize="14.0sp" />
+		</RelativeLayout>
+	</RelativeLayout>
+
+	<Button
+		android:id="@+id/btnSure"
+		android:layout_width="fill_parent"
+		android:layout_height="40.0dip"
+		android:layout_below="@+id/rl_1"
+		android:layout_marginLeft="18.0dip"
+		android:layout_marginRight="18.0dip"
+		android:layout_marginTop="30.0dip"
+		android:background="@drawable/btn_bg_gray"
+		android:clickable="false"
+		android:enabled="false"
+		android:text="登录"
+		android:textColor="#ffffffff"
+		android:textSize="18.0sp" />
+
+	<Button
+		android:id="@+id/btnClose"
+		android:layout_width="20.0dip"
+		android:layout_height="20.0dip"
+		android:layout_alignParentBottom="true"
+		android:layout_centerHorizontal="true"
+		android:layout_marginBottom="40.0dip"
+		android:background="@drawable/login_close" />
+
+	</RelativeLayout>
+</RelativeLayout>

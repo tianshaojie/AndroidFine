@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<ImageView
+		android:visibility="gone"
+		android:id="@+id/guideImage"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:scaleType="centerCrop"
+		android:src="@drawable/newer04"/>
+
+	<android.support.v4.view.ViewPager
+		android:visibility="gone"
+		android:id="@+id/pager"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent" />
+
+	<com.yuzhi.fine.ui.viewpagerindicator.CirclePageIndicator
+		android:visibility="gone"
+		android:id="@+id/indicator"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_centerHorizontal="true"
+		app:pageColor="#88808080"
+		app:strokeWidth="0dp"
+		android:layout_marginBottom="30dp"
+		android:padding="5dp"/>
+
+	<Button
+		android:id="@+id/btnHome"
+		android:visibility="gone"
+		android:layout_width="140dp"
+		android:layout_height="40dp"
+		android:background="@drawable/btn_orange"
+		android:text="立即找房"
+		android:textSize="@dimen/text_size_18"
+		android:textColor="@color/white"
+		android:layout_alignParentBottom="true"
+		android:layout_centerHorizontal="true"
+		android:layout_marginBottom="60dp" />
+
+</RelativeLayout>

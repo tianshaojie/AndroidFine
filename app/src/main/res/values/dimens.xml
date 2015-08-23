@@ -1,0 +1,84 @@
+<resources>
+	<!-- Default screen margins, per the Android Design guidelines. -->
+	<dimen name="activity_horizontal_margin">16dp</dimen>
+	<dimen name="activity_vertical_margin">16dp</dimen>
+
+	<!-- Per the design guidelines, navigation drawers should be between 240dp and 320dp:
+		 https://developer.android.com/design/patterns/navigation-drawer.html -->
+	<dimen name="navigation_drawer_width">240dp</dimen>
+
+
+	<!-- UI统一设置 -->
+	<dimen name="title_height">48.0dip</dimen>
+	<dimen name="title_btn_width">50.0dip</dimen>
+
+	<dimen name="text_large">30sp</dimen>
+	<dimen name="text_max">18sp</dimen>
+	<dimen name="text_med">15sp</dimen>
+	<dimen name="text_min">13sp</dimen>
+
+	<dimen name="margin_min">5dp</dimen>
+	<dimen name="margin_med">10dp</dimen>
+	<dimen name="margin_max">15dp</dimen>
+	<dimen name="margin_large">30dp</dimen>
+	<dimen name="margin_large_more">35dp</dimen>
+
+
+	<!-- 通用 -->
+	<dimen name="text_size_32">32.0sp</dimen>
+	<dimen name="text_size_31">31.0sp</dimen>
+	<dimen name="text_size_30">30.0sp</dimen>
+	<dimen name="text_size_29">29.0sp</dimen>
+	<dimen name="text_size_28">28.0sp</dimen>
+	<dimen name="text_size_27">27.0sp</dimen>
+	<dimen name="text_size_26">26.0sp</dimen>
+	<dimen name="text_size_25">25.0sp</dimen>
+	<dimen name="text_size_24">24.0sp</dimen>
+	<dimen name="text_size_23">23.0sp</dimen>
+	<dimen name="text_size_22">22.0sp</dimen>
+	<dimen name="text_size_21">21.0sp</dimen>
+	<dimen name="text_size_20">20.0sp</dimen>
+	<dimen name="text_size_19">19.0sp</dimen>
+	<dimen name="text_size_18">18.0sp</dimen>
+	<dimen name="text_size_17">17.0sp</dimen>
+	<dimen name="text_size_16">16.0sp</dimen>
+	<dimen name="text_size_15">15.0sp</dimen>
+	<dimen name="text_size_14">14.0sp</dimen>
+	<dimen name="text_size_13">13.0sp</dimen>
+	<dimen name="text_size_12">12.0sp</dimen>
+	<dimen name="text_size_11">11.0sp</dimen>
+	<dimen name="text_size_10">10.0sp</dimen>
+	<dimen name="text_size_9">9.0sp</dimen>
+	<dimen name="text_size_8">8.0sp</dimen>
+	<dimen name="text_size_7">7.0sp</dimen>
+	<dimen name="space_30">30.0dip</dimen>
+	<dimen name="space_29">29.0dip</dimen>
+	<dimen name="space_28">28.0dip</dimen>
+	<dimen name="space_27">27.0dip</dimen>
+	<dimen name="space_26">26.0dip</dimen>
+	<dimen name="space_25">25.0dip</dimen>
+	<dimen name="space_24">24.0dip</dimen>
+	<dimen name="space_23">23.0dip</dimen>
+	<dimen name="space_22">22.0dip</dimen>
+	<dimen name="space_21">21.0dip</dimen>
+	<dimen name="space_20">20.0dip</dimen>
+	<dimen name="space_19">19.0dip</dimen>
+	<dimen name="space_18">18.0dip</dimen>
+	<dimen name="space_17">17.0dip</dimen>
+	<dimen name="space_16">16.0dip</dimen>
+	<dimen name="space_15">15.0dip</dimen>
+	<dimen name="space_14">14.0dip</dimen>
+	<dimen name="space_13">13.0dip</dimen>
+	<dimen name="space_12">12.0dip</dimen>
+	<dimen name="space_11">11.0dip</dimen>
+	<dimen name="space_10">10.0dip</dimen>
+	<dimen name="space_9">9.0dip</dimen>
+	<dimen name="space_8">8.0dip</dimen>
+	<dimen name="space_7">7.0dip</dimen>
+	<dimen name="space_6">6.0dip</dimen>
+	<dimen name="space_5">5.0dip</dimen>
+	<dimen name="space_4">4.0dip</dimen>
+	<dimen name="space_3">0.0dip</dimen>
+	<dimen name="space_2">2.0dip</dimen>
+	<dimen name="space_1">0.0dip</dimen>
+</resources>

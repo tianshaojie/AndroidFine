@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<!--
+		Base application theme, dependent on API level. This theme is replaced
+		by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+	-->
+	<style name="AppBaseTheme" parent="android:Theme.Holo.Light.NoActionBar">
+		<!--
+			Theme customizations available in newer API levels can go in
+			res/values-vXX/styles.xml, while customizations related to
+			backward-compatibility can go here.
+		-->
+	</style>
+
+	<!-- Application theme. -->
+	<style name="AppTheme" parent="AppBaseTheme">
+		<!-- All customizations that are NOT specific to a particular API-level can go here. -->
+		<item name="vpiIconPageIndicatorStyle">@style/Widget.IconPageIndicator</item>
+		<item name="vpiTabPageIndicatorStyle">@style/Widget.TabPageIndicator.Custom</item>
+		<item name="android:windowIsTranslucent">true</item>
+		<!-- translucent system bars
+		<item name="android:windowTranslucentStatus">true</item>
+		<item name="android:windowTranslucentNavigation">true</item>
+		<item name="android:fitsSystemWindows">true</item>
+		 -->
+	</style>
+
+	<style name="Widget.TabPageIndicator.Custom" parent="Widget">
+		<item name="android:gravity">center</item>
+		<item name="android:background">@drawable/vpi__tab_indicator</item>
+		<item name="android:paddingLeft">22dip</item>
+		<item name="android:paddingRight">22dip</item>
+		<item name="android:paddingTop">10dp</item>
+		<item name="android:paddingBottom">10dp</item>
+		<item name="android:textAppearance">@style/TextAppearance.TabPageIndicator.Custom</item>
+		<item name="android:textSize">14sp</item>
+		<item name="android:maxLines">1</item>
+	</style>
+	<style name="TextAppearance.TabPageIndicator.Custom" parent="Widget">
+		<item name="android:textColor">@color/vpi__background_holo_dark</item>
+	</style>
+
+	<style name="footbar">
+		<item name="android:layout_width">0dp</item>
+		<item name="android:layout_height">fill_parent</item>
+		<item name="android:layout_weight">1</item>
+		<item name="android:gravity">center</item>
+		<item name="android:button">@null</item>
+	</style>
+
+	<style name="main_footbar_radio" parent="footbar">
+		<item name="android:paddingTop">5dp</item>
+		<item name="android:paddingBottom">5dp</item>
+		<item name="android:drawablePadding">3dp</item>
+		<item name="android:textSize">@dimen/text_size_11</item>
+		<item name="android:textColor">@drawable/footer_text_color</item>
+	</style>
+
+	<style name="main_head_title">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:textSize">@dimen/text_size_19</item>
+		<item name="android:textColor">@color/head_text</item>
+		<item name="android:shadowColor">@color/main_head_title_shadow_color</item>
+	</style>
+
+	<style name="title_base_button">
+		<item name="android:layout_width">48dp</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:textSize">@dimen/text_size_14</item>
+		<item name="android:textColor">@color/title_base_button_text_color</item>
+	</style>
+
+	<style name="title_button" parent="title_base_button">
+		<item name="android:paddingLeft">12dp</item>
+		<item name="android:paddingRight">12dp</item>
+		<item name="android:paddingTop">5dp</item>
+		<item name="android:paddingBottom">5dp</item>
+		<item name="android:layout_marginLeft">15dp</item>
+	</style>
+
+	<style name="CommonListViewStyle">
+		<item name="android:divider">@drawable/list_view_divider</item>
+		<item name="android:listSelector">@color/gray_light</item>
+		<item name="android:fadingEdge">none</item>
+		<item name="android:scrollbars">none</item>
+		<item name="android:fastScrollEnabled">false</item>
+		<item name="android:scrollingCache">true</item>
+		<item name="android:smoothScrollbar">true</item>
+	</style>
+
+	<style name="PopupAnimation" parent="android:Animation">
+		<item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+		<item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+	</style>
+</resources>

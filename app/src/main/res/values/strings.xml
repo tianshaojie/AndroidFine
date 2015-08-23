@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">AndroidFine</string>
+
+	<string name="clear_cache_menu">Clear Caches</string>
+	<string name="clear_cache_complete_toast">Caches have been cleared</string>
+	<string name="imageview_description">Image Thumbnail</string>
+	<string name="no_network_connection_toast">No network connection found</string>
+
+	<!-- 页面名称 -->
+	<string name="main_navigation_home">首页</string>
+	<string name="main_navigation_im">选房清单</string>
+	<string name="main_navigation_interest">看房日程</string>
+	<string name="main_navigation_user">我的</string>
+
+	<string name="market_info_title">大盘行情   dds</string>
+
+	<string name="progress_loading">加载中，请稍候</string>
+	<string name="progress_load_error">加载失败，点击屏幕刷新</string>
+	<string name="progress_load_no_data">暂无数据</string>
+
+	<!-- 手势密码 -->
+	<string name="string_security_setting">安全设置</string>
+	<string name="string_gesture_password">手势密码</string>
+	<string name="string_modify_gesture_password">修改手势密码</string>
+	<string name="string_set_gesture_password">设置手势密码</string>
+	<string name="string_guide_info">您可以创建一个</string>
+	<string name="string_guide_info_right">手势密码图案</string>
+	<string name="string_guide_info_last">使用手势密码进行登录，安全、便捷</string>
+
+	<string name="retry_gesture">重新绘制解锁图案</string>
+	<string name="draw_gesture">绘制解锁图案</string>
+	<string name="draw_gesture_again">再次输入手势密码</string>
+	<string name="draw_gesture_not_same">与上次绘制不一致，请重新绘制</string>
+	<string name="gesture_login_five_failed">登录错误过多，账号被注销</string>
+	<string name="draw_gesture_need_six_dot">至少连接六个点，请重新绘制</string>
+	<string name="draw_gesture_left_chances">输入手势密码错误，还有%s次机会</string>
+	<string name="forget_gesture_need_login">忘记手势密码，需重新登录</string>
+	<string name="draw_gesture_error_clear_login">输入手势密码错误5次，登录状态已清除</string>
+	<string name="set_complete">设置成功</string>
+	<string name="forget_gesture">忘记手势密码</string>
+
+
+</resources>

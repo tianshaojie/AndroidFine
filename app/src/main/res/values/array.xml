@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string-array name="news_titles">
+		<item>首页</item>
+		<item>清单</item>
+		<item>日程</item>
+		<item>我的</item>
+	</string-array>
+
+</resources>
