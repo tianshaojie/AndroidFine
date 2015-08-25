@@ -30,7 +30,7 @@
 	<color name="blue_light">#0083FF</color>
 
 	<!-- 头部文字颜色 -->
-	<color name="background_color">#fff8f8f8</color>
+	<color name="background_color">#ffffffff</color>
 	<color name="head_text">#0e5986</color>
 	<color name="main_head_title">#ffffff</color>
 	<color name="main_head_title_shadow_color">#ffffffff</color>
