@@ -58,21 +58,18 @@ public class MemberFragment extends Fragment {
         scrollView.getPullRootView().findViewById(R.id.tv_test1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("zhuwenwu", "onClick -->");
             }
         });
 
         scrollView.getPullRootView().findViewById(R.id.tv_test2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("zhuwenwu", "onClick -->");
             }
         });
 
         scrollView.getPullRootView().findViewById(R.id.tv_test3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("zhuwenwu", "onClick -->");
             }
         });
 //        DisplayMetrics localDisplayMetrics = new DisplayMetrics();

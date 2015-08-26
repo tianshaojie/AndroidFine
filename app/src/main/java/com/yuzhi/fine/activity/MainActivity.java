@@ -20,6 +20,8 @@ import java.util.List;
 
 public class MainActivity extends BaseFragmentActivity {
 
+    private static int currSel = 0;
+
     private RadioGroup group;
 
     private Fragment homeFragment = new MainPagerFragment();
@@ -46,15 +48,7 @@ public class MainActivity extends BaseFragmentActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        int checkedId = group.getCheckedRadioButtonId();
-        int cur = 0;
-        switch (checkedId) {
-            case R.id.foot_bar_home: cur = 0; break;
-            case R.id.foot_bar_im: cur = 1; break;
-            case R.id.foot_bar_interest: cur = 2; break;
-            case R.id.main_footbar_user: cur = 3; break;
-        }
-        Fragment fragment = fragmentList.get(cur);
+        Fragment fragment = fragmentList.get(currSel);
         if (fragment != null) {
             fragment.onActivityResult(requestCode, resultCode, data);
         }
@@ -66,18 +60,14 @@ public class MainActivity extends BaseFragmentActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
-                    case R.id.foot_bar_home: addFragmentToStack(0);
-                        break;
-                    case R.id.foot_bar_im:
-                        addFragmentToStack(1);
-                        break;
-                    case R.id.foot_bar_interest:
-                        addFragmentToStack(2);
-                        break;
-                    case R.id.main_footbar_user:
-                        addFragmentToStack(3);
-                        UIHelper.showLogin(MainActivity.this);
-                        break;
+                    case R.id.foot_bar_home: currSel = 0; break;
+                    case R.id.foot_bar_im: currSel = 1; break;
+                    case R.id.foot_bar_interest: currSel = 2; break;
+                    case R.id.main_footbar_user: currSel = 3; break;
+                }
+                addFragmentToStack(currSel);
+                if(currSel == 3) {
+                    UIHelper.showLogin(MainActivity.this);
                 }
             }
         });
@@ -109,5 +99,4 @@ public class MainActivity extends BaseFragmentActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
-
 }
