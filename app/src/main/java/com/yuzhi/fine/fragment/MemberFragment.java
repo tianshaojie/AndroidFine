@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.yuzhi.fine.R;
+import com.yuzhi.fine.ui.UIHelper;
 import com.yuzhi.fine.ui.pulltozoomview.PullToZoomScrollViewEx;
 
 public class MemberFragment extends Fragment {
@@ -39,7 +40,19 @@ public class MemberFragment extends Fragment {
         scrollView.setZoomView(zoomView);
         scrollView.setScrollContentView(contentView);
 
+        headView.findViewById(R.id.tv_register).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UIHelper.showLogin(getActivity());
+            }
+        });
 
+        headView.findViewById(R.id.tv_login).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UIHelper.showLogin(getActivity());
+            }
+        });
 
 
         scrollView.getPullRootView().findViewById(R.id.tv_test1).setOnClickListener(new View.OnClickListener() {

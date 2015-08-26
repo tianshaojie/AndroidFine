@@ -7,6 +7,12 @@
               android:gravity="center_vertical"
               android:orientation="horizontal">
 
+	<RadioGroup
+		android:id="@+id/group"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="horizontal">
+
 	<RadioButton
 			android:id="@+id/foot_bar_home"
 			style="@style/main_footbar_radio"
@@ -32,4 +38,5 @@
 			android:text="@string/main_navigation_user"
 			android:drawableTop="@drawable/widget_bar_user_bg"/>
 
+	</RadioGroup>
 </LinearLayout>
