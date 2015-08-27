@@ -163,7 +163,7 @@ public class AsyncHttpResponseHandler {
                 break;
             case FAILURE_MESSAGE:
                 response = (Object[]) msg.obj;
-                handleFailureMessage((Request) response[0], (IOException) response[1]);
+                handleFailureMessage((Request) response[1], (IOException) response[0]);
                 break;
         }
     }
