@@ -1,18 +1,12 @@
 
 package com.yuzhi.fine.ui.swipebacklayout;
 
-import android.annotation.TargetApi;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 
-import com.readystatesoftware.systembartint.SystemBarTintManager;
-import com.yuzhi.fine.R;
+import com.yuzhi.fine.activity.BaseFragmentActivity;
 
-public class SwipeBackActivity extends FragmentActivity implements SwipeBackActivityBase {
+public class SwipeBackActivity extends BaseFragmentActivity implements SwipeBackActivityBase {
     private SwipeBackActivityHelper mHelper;
 
     @Override
@@ -20,13 +14,6 @@ public class SwipeBackActivity extends FragmentActivity implements SwipeBackActi
         super.onCreate(savedInstanceState);
         mHelper = new SwipeBackActivityHelper(this);
         mHelper.onActivityCreate();
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            setTranslucentStatus();
-        }
-        SystemBarTintManager tintManager = new SystemBarTintManager(this);
-        tintManager.setStatusBarTintEnabled(true);
-        tintManager.setStatusBarTintResource(R.color.status_bar_bg);//通知栏所需颜色
     }
 
     @Override
@@ -59,16 +46,4 @@ public class SwipeBackActivity extends FragmentActivity implements SwipeBackActi
         getSwipeBackLayout().scrollToFinishActivity();
     }
 
-    @TargetApi(19)
-    private void setTranslucentStatus() {
-        Window window = getWindow();
-        // Translucent status bar
-        window.setFlags(
-                WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
-                WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        // Translucent navigation bar
-        window.setFlags(
-                WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION,
-                WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-    }
 }
