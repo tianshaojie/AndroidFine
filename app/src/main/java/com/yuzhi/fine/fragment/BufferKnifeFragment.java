@@ -16,7 +16,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.squareup.okhttp.Request;
 import com.squareup.picasso.Picasso;
 import com.yuzhi.fine.R;
-import com.yuzhi.fine.http.AsyncHttpResponseHandler;
+import com.yuzhi.fine.http.HttpResponseHandler;
 import com.yuzhi.fine.http.HttpClient;
 import com.yuzhi.fine.model.SearchParam;
 import com.yuzhi.fine.model.SearchShop;
@@ -126,7 +126,7 @@ public class BufferKnifeFragment extends Fragment {
         }
         param.setPno(pno);
         listView.setFooterViewTextNormal();
-        HttpClient.getRecommendShops(param, new AsyncHttpResponseHandler() {
+        HttpClient.getRecommendShops(param, new HttpResponseHandler() {
 
             @Override
             public void onSuccess(String body) {

@@ -14,7 +14,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.squareup.okhttp.Request;
 import com.yuzhi.fine.R;
-import com.yuzhi.fine.http.AsyncHttpResponseHandler;
+import com.yuzhi.fine.http.HttpResponseHandler;
 import com.yuzhi.fine.http.HttpClient;
 import com.yuzhi.fine.model.SearchParam;
 import com.yuzhi.fine.model.SearchShop;
@@ -110,7 +110,7 @@ public class PicassoOkHttpFragment extends Fragment {
         listView.setFooterViewTextNormal();
 
 
-        HttpClient.getRecommendShops(param, new AsyncHttpResponseHandler() {
+        HttpClient.getRecommendShops(param, new HttpResponseHandler() {
 
             @Override
             public void onSuccess(String body) {
