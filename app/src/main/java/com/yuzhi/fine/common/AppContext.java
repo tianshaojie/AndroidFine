@@ -2,10 +2,12 @@ package com.yuzhi.fine.common;
 
 import android.app.Application;
 
+import com.squareup.leakcanary.LeakCanary;
+import com.squareup.leakcanary.RefWatcher;
+
 public class AppContext extends Application {
 
     private static AppContext app;
-    public static String currentUserNick = ""; // 当前用户nickname,为了苹果推送不是userid而是昵称
 
     public AppContext() {
         app = this;
@@ -21,9 +23,8 @@ public class AppContext extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        LeakCanary.install(this);
         registerUncaughtExceptionHandler();
-        // 在使用 SDK 各组间之前初始化 context 信息，传入 ApplicationContext
-//        SDKInitializer.initialize(this);
     }
 
     // 注册App异常崩溃处理器
