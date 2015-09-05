@@ -27,8 +27,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.*;
 import com.yuzhi.fine.R;
+import com.yuzhi.fine.http.HttpClient;
 import com.yuzhi.fine.ui.pulltorefresh.internal.EmptyViewMethodAccessor;
 import com.yuzhi.fine.ui.pulltorefresh.internal.LoadingLayout;
+
+import java.util.List;
 
 public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView> {
 
@@ -338,19 +341,27 @@ public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView
     private ProgressBar progressBar;
     private TextView textView;
 
-    public void addFooterView() {
+    public void withLoadMoreView() {
         if (footerView == null) {
-            footerView = View.inflate(getContext(), R.layout.refresh_footer, null);
+            footerView = View.inflate(getContext(), R.layout.layout_load_more, null);
             textView = (TextView) footerView.findViewById(R.id.text);
             progressBar = (ProgressBar) footerView.findViewById(R.id.progress);
         }
         getRefreshableView().removeFooterView(footerView);
         getRefreshableView().setFooterDividersEnabled(false);
-        setFooterViewTextNormal();
+        setLoadMoreViewTextLoading();
         getRefreshableView().addFooterView(footerView);
     }
 
-    public void setFooterViewTextNormal() {
+    public void updateLoadMoreViewText(List data) {
+        if(getRefreshableView().getAdapter().getCount() == 0 && data.isEmpty()) {
+            setLoadMoreViewTextNoData();
+        } else if(data.size() < HttpClient.PAGE_SIZE) {
+            setLoadMoreViewTextNoMoreData();
+        }
+    }
+
+    public void setLoadMoreViewTextLoading() {
         if (progressBar.getVisibility() == View.VISIBLE) {
             return;
         }
@@ -358,17 +369,17 @@ public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView
         progressBar.setVisibility(VISIBLE);
     }
 
-    public void setFooterViewTextError() {
+    public void setLoadMoreViewTextError() {
         textView.setText(R.string.pull_to_refresh_net_error_label);
         progressBar.setVisibility(GONE);
     }
 
-    public void setFooterViewTextNoData() {
+    public void setLoadMoreViewTextNoData() {
         textView.setText(R.string.pull_to_refresh_no_data_label);
         progressBar.setVisibility(GONE);
     }
 
-    public void setFooterViewTextNoMoreData() {
+    public void setLoadMoreViewTextNoMoreData() {
         textView.setText(R.string.pull_to_refresh_no_more_data_label);
         progressBar.setVisibility(GONE);
     }

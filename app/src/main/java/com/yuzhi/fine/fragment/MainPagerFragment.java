@@ -51,13 +51,13 @@ public class MainPagerFragment extends Fragment {
         @Override
         public Fragment getItem(int position) {
             if (position == 0) {
-                return new BufferKnifeFragment();
+                return new DemoPtrFragment();
             }
             if (position == 1) {
                 return new BufferKnifeFragment();
             }
             if (position == 2) {
-                return new PicassoOkHttpFragment();
+                return new BufferKnifeFragment();
             }
             return HomeFragment.newInstance(URLS[position % URLS.length]);
         }

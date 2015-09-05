@@ -16,38 +16,48 @@ import com.alibaba.fastjson.JSONObject;
 import com.squareup.okhttp.Request;
 import com.squareup.picasso.Picasso;
 import com.yuzhi.fine.R;
-import com.yuzhi.fine.http.HttpResponseHandler;
 import com.yuzhi.fine.http.HttpClient;
+import com.yuzhi.fine.http.HttpResponseHandler;
 import com.yuzhi.fine.model.SearchParam;
 import com.yuzhi.fine.model.SearchShop;
 import com.yuzhi.fine.ui.UIHelper;
-import com.yuzhi.fine.ui.pulltorefresh.PullToRefreshBase;
-import com.yuzhi.fine.ui.pulltorefresh.PullToRefreshListView;
+import com.yuzhi.fine.ui.loadmore.LoadMoreListView;
 import com.yuzhi.fine.ui.quickadapter.BaseAdapterHelper;
 import com.yuzhi.fine.ui.quickadapter.QuickAdapter;
+import com.yuzhi.fine.utils.DeviceUtil;
 
 import java.io.IOException;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import in.srain.cube.views.ptr.PtrClassicFrameLayout;
+import in.srain.cube.views.ptr.PtrDefaultHandler;
+import in.srain.cube.views.ptr.PtrFrameLayout;
+import in.srain.cube.views.ptr.PtrHandler;
+import in.srain.cube.views.ptr.PtrUIHandler;
+import in.srain.cube.views.ptr.header.StoreHouseHeader;
+import in.srain.cube.views.ptr.indicator.PtrIndicator;
 
-
-public class BufferKnifeFragment extends Fragment {
-
+/**
+ * Created by tiansj on 15/9/4.
+ */
+public class DemoPtrFragment extends Fragment {
     private Activity context;
 
     private SearchParam param;
     private int pno = 1;
     private boolean isLoadAll;
 
+    @Bind(R.id.rotate_header_list_view_frame)
+    PtrClassicFrameLayout mPtrFrame;
     @Bind(R.id.listView)
-    PullToRefreshListView listView;
+    LoadMoreListView listView;
     QuickAdapter<SearchShop> adapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.recommend_shop_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_demo_ptr, container, false);
         ButterKnife.bind(this, view);
         return view;
     }
@@ -70,24 +80,39 @@ public class BufferKnifeFragment extends Fragment {
                         .setImageUrl(R.id.logo, shop.getLogo()); // 自动异步加载图片
             }
         };
-
-        listView.withLoadMoreView();
         listView.setAdapter(adapter);
+
+        // header custom begin
+        final StoreHouseHeader header = new StoreHouseHeader(context);
+        header.setPadding(0, DeviceUtil.dp2px(context, 15), 0, 0);
+        header.initWithString("Fine");
+        mPtrFrame.setHeaderView(header);
+        mPtrFrame.addPtrUIHandler(header);
+        // header custom end
+
         // 下拉刷新
-        listView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ListView>() {
+        mPtrFrame.setLastUpdateTimeRelateObject(this);
+        mPtrFrame.setPtrHandler(new PtrHandler() {
             @Override
-            public void onRefresh(PullToRefreshBase<ListView> refreshView) {
+            public void onRefreshBegin(PtrFrameLayout frame) {
                 initData();
                 loadData();
             }
-        });
-        // 加载更多
-        listView.setOnLastItemVisibleListener(new PullToRefreshBase.OnLastItemVisibleListener() {
+
             @Override
-            public void onLastItemVisible() {
+            public boolean checkCanDoRefresh(PtrFrameLayout frame, View content, View header) {
+                return PtrDefaultHandler.checkContentCanBePulledDown(frame, content, header);
+            }
+        });
+
+        // 加载更多
+        listView.setOnLoadMoreListener(new LoadMoreListView.OnLoadMoreListener() {
+            @Override
+            public void onLoadMore() {
                 loadData();
             }
         });
+
         // 点击事件
         listView.setOnItemClickListener(new ListView.OnItemClickListener() {
             @Override
@@ -107,7 +132,8 @@ public class BufferKnifeFragment extends Fragment {
             }
 
             @Override
-            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+            public void onScroll(AbsListView view, int firstVisibleItem,
+                                 int visibleItemCount, int totalItemCount) {
             }
         });
     }
@@ -123,12 +149,10 @@ public class BufferKnifeFragment extends Fragment {
             return;
         }
         param.setPno(pno);
-        listView.setLoadMoreViewTextLoading();
         HttpClient.getRecommendShops(param, new HttpResponseHandler() {
-
             @Override
             public void onSuccess(String body) {
-                listView.onRefreshComplete();
+                mPtrFrame.refreshComplete();
                 JSONObject object = JSON.parseObject(body);
                 List<SearchShop> list = JSONArray.parseArray(object.getString("body"), SearchShop.class);
                 listView.updateLoadMoreViewText(list);
@@ -142,7 +166,7 @@ public class BufferKnifeFragment extends Fragment {
 
             @Override
             public void onFailure(Request request, IOException e) {
-                listView.onRefreshComplete();
+                mPtrFrame.refreshComplete();
                 listView.setLoadMoreViewTextError();
             }
         });
@@ -165,4 +189,5 @@ public class BufferKnifeFragment extends Fragment {
         super.onDestroy();
         Picasso.with(context).cancelTag(context);
     }
+
 }
