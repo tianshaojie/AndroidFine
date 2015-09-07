@@ -2,13 +2,13 @@ package com.yuzhi.fine.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.yuzhi.fine.R;
 import com.yuzhi.fine.ui.photoview.PhotoViewAdapter;
-import com.yuzhi.fine.ui.photoview.PhotoViewPager;
 import com.yuzhi.fine.ui.swipebacklayout.SwipeBackActivity;
 
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ public class ImageGalleryActivity extends SwipeBackActivity {
     private TextView headTitle;
     private Button headBackBtn;
 
-    private PhotoViewPager mViewPager;
+    private ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +72,7 @@ public class ImageGalleryActivity extends SwipeBackActivity {
                 headTitle.setText((currentPosition+1) + "/" + len);
             }
         });
-        mViewPager = (PhotoViewPager)findViewById(R.id.viewer);
+        mViewPager = (ViewPager)findViewById(R.id.viewer);
         mViewPager.setOffscreenPageLimit(3);
         mViewPager.setAdapter(pagerAdapter);
         mViewPager.setCurrentItem(position);

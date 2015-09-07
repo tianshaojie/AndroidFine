@@ -9,7 +9,7 @@
         android:id="@+id/layoutHeader"
         layout="@layout/main_header" />
 
-    <com.yuzhi.fine.ui.photoview.PhotoViewPager
+    <android.support.v4.view.ViewPager
         android:id="@+id/viewer"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"

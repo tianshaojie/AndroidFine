@@ -6,11 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import com.yuzhi.fine.R;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
+import com.yuzhi.fine.R;
 
-public class PhotoViewWraper extends RelativeLayout {
+public class PhotoViewWrapper extends RelativeLayout {
 
 	protected View loadingDialog;
 
@@ -18,13 +18,13 @@ public class PhotoViewWraper extends RelativeLayout {
 
 	protected Context mContext;
 	
-	public PhotoViewWraper(Context ctx) {
+	public PhotoViewWrapper(Context ctx) {
 		super(ctx);
 		mContext = ctx;
 		init();
 	}
 
-	public PhotoViewWraper(Context ctx, AttributeSet attrs) {
+	public PhotoViewWrapper(Context ctx, AttributeSet attrs) {
 		super(ctx, attrs);
 		mContext = ctx;
 		init();

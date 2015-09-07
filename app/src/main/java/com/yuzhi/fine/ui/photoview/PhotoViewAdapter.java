@@ -32,15 +32,7 @@ public class PhotoViewAdapter extends PagerAdapter {
 
 	@Override
 	public View instantiateItem(ViewGroup container, int position) {
-		
-//		final PhotoView photoView = new PhotoView(mContext);
-//		LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-//		photoView.setLayoutParams(params);
-//		mImageFetcher.loadImage(imgUrls.get(position), photoView);
-//		container.addView(photoView, 0);
-//		return photoView;
-		
-		final PhotoViewWraper iv = new PhotoViewWraper(mContext);
+		final PhotoViewWrapper iv = new PhotoViewWrapper(mContext);
 		iv.setUrl(imgUrls.get(position));
 		iv.setLayoutParams(new ViewGroup.LayoutParams(
 				ViewGroup.LayoutParams.MATCH_PARENT,
