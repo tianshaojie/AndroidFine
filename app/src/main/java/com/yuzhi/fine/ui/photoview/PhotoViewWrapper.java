@@ -36,6 +36,7 @@ public class PhotoViewWrapper extends RelativeLayout {
 
 	protected void init() {
 		photoView = new PhotoView(mContext);
+		photoView.enable();
 		LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
 		photoView.setLayoutParams(params);
 		this.addView(photoView);
