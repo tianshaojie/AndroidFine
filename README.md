@@ -15,7 +15,7 @@
 * HttpClient集成了OkHttpClient，基本的get，post，方便扩展和整合
 * Picasso.with(context).load("url).into(imageView)，舒服且强大的图片加载
 * 各种utils，拿来就可以用
-* [Android编码规范](http://tianshaojie.github.io/android-code-style)，简单才能规范
+* [Android编码规范](http://tianshaojie.github.io/android-code-style)，简单才能规范(已更新，更合理，欢迎建议)
 
 
 ## 精致Demo
