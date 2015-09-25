@@ -64,5 +64,5 @@
 	<color name="color_yubibao_asset_bg">#e6eaf0</color>
 	<color name="color_red1">#ef3f2f</color>
 	<color name="color_red">#d13a38</color>
-
+	<color name="reveal_color">#1b000000</color>
 </resources>

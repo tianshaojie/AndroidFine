@@ -72,6 +72,13 @@ public class MemberFragment extends Fragment {
             public void onClick(View v) {
             }
         });
+
+        scrollView.getPullRootView().findViewById(R.id.tv_test4).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e("zhuwenwu", "onClick -->");
+            }
+        });
 //        DisplayMetrics localDisplayMetrics = new DisplayMetrics();
 //        context.getWindowManager().getDefaultDisplay().getMetrics(localDisplayMetrics);
 //        int mScreenHeight = localDisplayMetrics.heightPixels;

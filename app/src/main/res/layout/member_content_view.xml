@@ -5,39 +5,57 @@
     android:background="#ffffff"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_test1"
+    <com.yuzhi.fine.ui.RevealLayout.RevealLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:padding="15dp"
-        android:text="我的收藏"
-        android:textSize="@dimen/text_size_16" />
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_test1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="15dp"
+            android:text="我的收藏"
+            android:textSize="@dimen/text_size_16" />
+    </com.yuzhi.fine.ui.RevealLayout.RevealLayout>
 
-    <TextView
-        android:id="@+id/tv_test2"
+    <com.yuzhi.fine.ui.RevealLayout.RevealLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:padding="15dp"
-        android:text="看房顾问"
-        android:textSize="@dimen/text_size_16" />
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_test2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="15dp"
+            android:text="看房顾问"
+            android:textSize="@dimen/text_size_16" />
+    </com.yuzhi.fine.ui.RevealLayout.RevealLayout>
 
-    <TextView
-        android:id="@+id/tv_test3"
+    <com.yuzhi.fine.ui.RevealLayout.RevealLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:padding="15dp"
-        android:text="购房须知"
-        android:textSize="@dimen/text_size_16" />
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_test3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="15dp"
+            android:text="购房须知"
+            android:textSize="@dimen/text_size_16" />
+    </com.yuzhi.fine.ui.RevealLayout.RevealLayout>
 
-    <TextView
+
+    <com.yuzhi.fine.ui.RevealLayout.RevealLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:padding="15dp"
-        android:text="设置"
-        android:textSize="@dimen/text_size_16" />
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_test4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="15dp"
+            android:text="设置"
+            android:textSize="@dimen/text_size_16" />
+    </com.yuzhi.fine.ui.RevealLayout.RevealLayout>
 
 </LinearLayout>
