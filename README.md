@@ -36,5 +36,7 @@
 
 [Download AndroidFine.apk](http://files.cnblogs.com/files/purediy/AndroidFine.apk)
 
+## 捐赠
 
+![](https://tfsimg.alipay.com/images/mobilecodec/T16gVjXXRiXXXXXXXX)
 
