@@ -1,3 +1,5 @@
+[![Android Gems](http://www.android-gems.com/badge/tianshaojie/AndroidFine.svg?branch=master)](http://www.android-gems.com/lib/tianshaojie/AndroidFine)
+
 # AndroidFine，Android快速开发框架
 
 ## UI组件，不止是简单整合，更易用
