@@ -1,11 +1,11 @@
 package com.yuzhi.fine.model;
 
 import com.alibaba.fastjson.JSON;
-import com.yuzhi.fine.common.NoObfuscateInterface;
+import com.yuzhi.fine.common.NotObfuscateInterface;
 
 import java.io.Serializable;
 
-public class SearchParam implements Serializable, NoObfuscateInterface {
+public class SearchParam implements Serializable, NotObfuscateInterface {
 
     public static final int SORT_GRADE = 0;  // 评分由高到低（默认按评分）
     public static final int SORT_TIME = 1; // 人气由高到低（按人气）

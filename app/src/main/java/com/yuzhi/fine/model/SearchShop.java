@@ -1,6 +1,6 @@
 package com.yuzhi.fine.model;
 
-import com.yuzhi.fine.common.NoObfuscateInterface;
+import com.yuzhi.fine.common.NotObfuscateInterface;
 
 import java.io.Serializable;
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
  * User: tiansj
  * DateTime: 14-1-3 下午4:49
  */
-public class SearchShop implements Serializable, NoObfuscateInterface {
+public class SearchShop implements Serializable, NotObfuscateInterface {
 
     public static final int TYPE_OUTSIDE = 0;  // 外部商家
     public static final int TYPE_INSIDE = 1; // 内部商家

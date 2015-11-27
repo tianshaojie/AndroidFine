@@ -1,6 +1,6 @@
 package com.yuzhi.fine.model;
 
-import com.yuzhi.fine.common.NoObfuscateInterface;
+import com.yuzhi.fine.common.NotObfuscateInterface;
 
 import java.io.Serializable;
 
@@ -9,7 +9,7 @@ import java.io.Serializable;
  * User: tiansj
  * DateTime: 14-1-3 下午4:49
  */
-public class Coordinate implements Serializable, NoObfuscateInterface {
+public class Coordinate implements Serializable, NotObfuscateInterface {
 
     private double lng;
     private double lat;
