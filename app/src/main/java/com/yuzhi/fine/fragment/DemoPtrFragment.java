@@ -86,6 +86,7 @@ public class DemoPtrFragment extends Fragment {
         final StoreHouseHeader header = new StoreHouseHeader(context);
         header.setPadding(0, DeviceUtil.dp2px(context, 15), 0, 0);
         header.initWithString("Fine");
+        header.setTextColor(getResources().getColor(R.color.gray));
         mPtrFrame.setHeaderView(header);
         mPtrFrame.addPtrUIHandler(header);
         // header custom end

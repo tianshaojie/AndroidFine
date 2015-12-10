@@ -9,7 +9,6 @@
         android:id="@+id/rotate_header_list_view_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/gray"
         cube_ptr:ptr_duration_to_close="300"
         cube_ptr:ptr_duration_to_close_header="2000"
         cube_ptr:ptr_keep_header_when_refresh="true"
@@ -22,9 +21,7 @@
             android:id="@+id/listView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/background_color"
             style="@style/CommonListViewStyle" />
-
 
     </in.srain.cube.views.ptr.PtrClassicFrameLayout>
 

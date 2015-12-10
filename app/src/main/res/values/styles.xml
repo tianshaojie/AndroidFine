@@ -84,7 +84,7 @@
 
 	<style name="CommonListViewStyle">
 		<item name="android:divider">@drawable/list_view_divider</item>
-		<item name="android:listSelector">@color/gray_light</item>
+		<item name="android:listSelector">@drawable/list_item_selector</item>
 		<item name="android:fadingEdge">none</item>
 		<item name="android:scrollbars">none</item>
 		<item name="android:fastScrollEnabled">false</item>
