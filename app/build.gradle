@@ -1,9 +1,28 @@
 apply plugin: 'com.android.application'
+apply plugin: 'packer'
+
+
+packer {
+    /**渠道包**/
+    manifestMatcher = ['UMENG_CHANNEL','Promotion_Market']
+    archiveOutput = file(new File(project.rootProject.buildDir.path, "apks"))
+    archiveNameFormat = '${appPkg}-c-${buildType}-${buildTime}'
+
+    /**版本号自增**/
+    // 指定是否使用build版本号自增
+    buildNumberAuto = true
+    // 指定使用版本号自增的buildType，默认是全部
+    buildNumberTypeMatcher = ['release', 'debug']
+}
 
 android {
     compileSdkVersion 22
     buildToolsVersion "22.0.1"
     defaultConfig {
+        // Warning:Renderscript support mode is not currently supported with renderscript target 21+
+        renderscriptTargetApi 20
+        renderscriptSupportModeEnabled true
+
         applicationId "com.yuzhi.fine"
         minSdkVersion 14
         targetSdkVersion 22
@@ -17,6 +36,12 @@ android {
             storeFile file('keystore/release.jks')
             storePassword '11118888'
         }
+        debug {
+            keyAlias 'debug'
+            keyPassword '11118888'
+            storeFile file('keystore/debug.jks')
+            storePassword '11118888'
+        }
     }
     buildTypes {
         release {
@@ -24,6 +49,11 @@ android {
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
+        }
+        debug {
+            minifyEnabled false
+            debuggable true
+            signingConfig signingConfigs.debug
         }
     }
     sourceSets {
@@ -41,10 +71,23 @@ android {
     lintOptions {
         abortOnError false
     }
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+    packagingOptions {
+        exclude 'lib/armeabi-v7a/librsjni.so'
+        exclude 'lib/armeabi-v7a/libRSSupport.so'
+        exclude 'lib/mips/librsjni.so'
+        exclude 'lib/mips/libRSSupport.so'
+        exclude 'lib/x86/librsjni.so'
+        exclude 'lib/x86/libRSSupport.so'
+    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'jp.wasabeef:blurry:1.0.5'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.squareup.okhttp:okhttp:2.4.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
