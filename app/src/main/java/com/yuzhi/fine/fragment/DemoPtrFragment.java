@@ -1,6 +1,5 @@
 package com.yuzhi.fine.fragment;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -16,6 +15,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.squareup.okhttp.Request;
 import com.squareup.picasso.Picasso;
 import com.yuzhi.fine.R;
+import com.yuzhi.fine.activity.MainActivity;
 import com.yuzhi.fine.http.HttpClient;
 import com.yuzhi.fine.http.HttpResponseHandler;
 import com.yuzhi.fine.model.SearchParam;
@@ -35,15 +35,13 @@ import in.srain.cube.views.ptr.PtrClassicFrameLayout;
 import in.srain.cube.views.ptr.PtrDefaultHandler;
 import in.srain.cube.views.ptr.PtrFrameLayout;
 import in.srain.cube.views.ptr.PtrHandler;
-import in.srain.cube.views.ptr.PtrUIHandler;
 import in.srain.cube.views.ptr.header.StoreHouseHeader;
-import in.srain.cube.views.ptr.indicator.PtrIndicator;
 
 /**
  * Created by tiansj on 15/9/4.
  */
 public class DemoPtrFragment extends Fragment {
-    private Activity context;
+    private MainActivity context;
 
     private SearchParam param;
     private int pno = 1;
@@ -65,7 +63,7 @@ public class DemoPtrFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        context = getActivity();
+        context = (MainActivity) getActivity();
         initData();
         initView();
         loadData();
@@ -80,6 +78,7 @@ public class DemoPtrFragment extends Fragment {
                         .setImageUrl(R.id.logo, shop.getLogo()); // 自动异步加载图片
             }
         };
+        listView.setDrawingCacheEnabled(true);
         listView.setAdapter(adapter);
 
         // header custom begin
@@ -135,9 +134,104 @@ public class DemoPtrFragment extends Fragment {
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem,
                                  int visibleItemCount, int totalItemCount) {
+                // getLastVisibleItemBitmap(firstVisibleItem+visibleItemCount);
+//                takeScreenShot(context);
             }
         });
+
     }
+
+//    public void takeScreenShot(Activity activity) {
+//        // View是你需要截图的View
+//        View view = activity.getWindow().getDecorView();
+//        view.setDrawingCacheEnabled(true);
+//        view.buildDrawingCache();
+//        Bitmap b1 = view.getDrawingCache();
+//
+//        // 获取状态栏高度
+//        Rect frame = new Rect();
+//        activity.getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
+//        int statusBarHeight = frame.top;
+//        System.out.println(statusBarHeight);
+//
+//        // 获取屏幕长和高
+//        int width = activity.getWindowManager().getDefaultDisplay().getWidth();
+//        int height = activity.getWindowManager().getDefaultDisplay().getHeight();
+//        // 去掉标题栏
+////         Bitmap b = Bitmap.createBitmap(b1, 0, height-120, width, 120);
+//        Bitmap b = Bitmap.createBitmap(b1, 0, statusBarHeight, width, height
+//                - statusBarHeight);
+//        view.destroyDrawingCache();
+//        context.blurFooterBar(b);
+////        return b;
+//    }
+//
+//    private void getLastVisibleItemBitmap(int pos) {
+//        View childView = adapter.getView(pos, null, listView);
+//        if(childView == null) {
+//            return;
+//        }
+//        childView.measure(View.MeasureSpec.makeMeasureSpec(listView.getWidth(), View.MeasureSpec.EXACTLY),
+//                View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+//
+//        childView.layout(0, 0, childView.getMeasuredWidth(), childView.getMeasuredHeight());
+//        childView.setDrawingCacheEnabled(true);
+//        childView.buildDrawingCache();
+////        return childView.getDrawingCache();
+//        context.blurFooterBar(childView.getDrawingCache());
+//    }
+//
+//    public Bitmap getWholeListViewItemsToBitmap() {
+//        int itemscount       = adapter.getCount();
+//        int allitemsheight   = 0;
+//        List<Bitmap> bmps    = new ArrayList<Bitmap>();
+//
+//        for (int i = 0; i < itemscount; i++) {
+//
+//            View childView      = adapter.getView(i, null, listView);
+//            childView.measure(View.MeasureSpec.makeMeasureSpec(listView.getWidth(), View.MeasureSpec.EXACTLY),
+//                    View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+//
+//            childView.layout(0, 0, childView.getMeasuredWidth(), childView.getMeasuredHeight());
+//            childView.setDrawingCacheEnabled(true);
+//            childView.buildDrawingCache();
+//            bmps.add(childView.getDrawingCache());
+//            allitemsheight+=childView.getMeasuredHeight();
+//        }
+//
+//        Bitmap bigbitmap    = Bitmap.createBitmap(listView.getMeasuredWidth(), allitemsheight, Bitmap.Config.ARGB_8888);
+//        Canvas bigcanvas    = new Canvas(bigbitmap);
+//
+//        Paint paint = new Paint();
+//        int iHeight = 0;
+//
+//        for (int i = 0; i < bmps.size(); i++) {
+//            Bitmap bmp = bmps.get(i);
+//            bigcanvas.drawBitmap(bmp, 0, iHeight, paint);
+//            iHeight+=bmp.getHeight();
+//
+//            bmp.recycle();
+//            bmp=null;
+//        }
+//
+//
+//        return bigbitmap;
+//    }
+//
+//
+//    private void applyBlur() {
+//        listView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+//            @Override
+//            public boolean onPreDraw() {
+//                listView.getViewTreeObserver().removeOnPreDrawListener(this);
+//                listView.buildDrawingCache();
+//
+//                Bitmap bmp = listView.getDrawingCache();
+//                context.blurFooterBar(bmp);
+//                return true;
+//            }
+//        });
+//    }
 
     private void initData() {
         param = new SearchParam();

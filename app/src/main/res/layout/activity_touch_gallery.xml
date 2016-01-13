@@ -7,7 +7,7 @@
 
     <include
         android:id="@+id/layoutHeader"
-        layout="@layout/main_header" />
+        layout="@layout/layout_main_header" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewer"

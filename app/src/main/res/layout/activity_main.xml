@@ -6,14 +6,14 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <include layout="@layout/main_header" />
+    <include layout="@layout/layout_main_header" />
 
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:background="@color/background_color"
         android:layout_height="0dip"
-        android:layout_weight="1.0"/>
+        android:layout_weight="1.0"
+        android:background="@color/background_color" />
 
-    <include layout="@layout/main_footer" />
+    <include layout="@layout/layout_main_footer" />
 </LinearLayout>
