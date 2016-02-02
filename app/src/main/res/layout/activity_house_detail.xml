@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray_light"
+    android:background="@color/background_color"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
@@ -44,7 +44,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/gray_light" />
+                android:background="@color/background_color" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -331,7 +331,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
                         android:text="总 价："
-                        android:textColor="@color/color_grey" />
+                        android:textColor="@color/gray" />
 
                     <TextView
                         android:id="@+id/textView14"
@@ -355,7 +355,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_toRightOf="@+id/splitView3"
                         android:text="单价："
-                        android:textColor="@color/color_grey" />
+                        android:textColor="@color/gray" />
 
                     <TextView
                         android:id="@+id/textView15"
@@ -380,7 +380,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
                         android:text="户 型："
-                        android:textColor="@color/color_grey" />
+                        android:textColor="@color/gray" />
 
                     <TextView
                         android:id="@+id/textView18"
@@ -404,7 +404,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_toRightOf="@+id/splitView4"
                         android:text="面积："
-                        android:textColor="@color/color_grey" />
+                        android:textColor="@color/gray" />
 
                     <TextView
                         android:id="@+id/textView20"
@@ -430,7 +430,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
                         android:text="朝向："
-                        android:textColor="@color/color_grey" />
+                        android:textColor="@color/gray" />
 
                     <TextView
                         android:id="@+id/textView22"
@@ -454,7 +454,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_toRightOf="@+id/splitView5"
                         android:text="楼层："
-                        android:textColor="@color/color_grey" />
+                        android:textColor="@color/gray" />
 
                     <TextView
                         android:id="@+id/textView24"
@@ -480,7 +480,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
                         android:text="房型："
-                        android:textColor="@color/color_grey" />
+                        android:textColor="@color/gray" />
 
                     <TextView
                         android:id="@+id/textView26"
@@ -504,7 +504,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_toRightOf="@+id/splitView6"
                         android:text="产权："
-                        android:textColor="@color/color_grey" />
+                        android:textColor="@color/gray" />
 
                     <TextView
                         android:id="@+id/textView28"
@@ -530,7 +530,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
                         android:text="年代："
-                        android:textColor="@color/color_grey" />
+                        android:textColor="@color/gray" />
 
                     <TextView
                         android:id="@+id/textView30"
@@ -554,7 +554,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_toRightOf="@+id/splitView7"
                         android:text="编号："
-                        android:textColor="@color/color_grey" />
+                        android:textColor="@color/gray" />
 
                     <TextView
                         android:id="@+id/textView32"
@@ -579,7 +579,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
                         android:text="特点："
-                        android:textColor="@color/color_grey" />
+                        android:textColor="@color/gray" />
 
                     <TextView
                         android:id="@+id/textView34"
@@ -626,7 +626,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginLeft="10dp"
                     android:text="王先生"
-                    android:textColor="@color/color_black"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/text_size_18" />
 
                 <TextView
@@ -638,7 +638,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_toEndOf="@+id/textView35"
                     android:text="业主"
-                    android:textColor="@color/color_grey" />
+                    android:textColor="@color/gray" />
 
                 <TextView
                     android:id="@+id/textView37"
@@ -649,7 +649,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="5dp"
                     android:text="房屋状况"
-                    android:textColor="@color/color_grey" />
+                    android:textColor="@color/gray" />
 
                 <TextView
                     android:id="@+id/textView38"

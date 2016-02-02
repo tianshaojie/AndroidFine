@@ -8,53 +8,53 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/ic_img_user_default"
-        android:contentDescription="@string/app_name" />
+        android:layout_marginTop="30dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_img_user_default" />
 
     <TextView
         android:id="@+id/tv_user_name"
-        android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_below="@id/iv_user_head"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="6dp"
         android:text="13521468432"
-        android:textColor="#ffffff" />
+        android:textColor="@color/text_color_white"
+        android:textSize="16sp" />
 
     <LinearLayout
         android:id="@+id/ll_action_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#66000000"
+        android:layout_alignParentBottom="true"
+        android:background="@color/transparent_half"
         android:divider="@drawable/ic_img_line_v"
-        android:showDividers="middle"
         android:dividerPadding="16dp"
-        android:layout_alignParentBottom="true">
+        android:showDividers="middle">
 
         <TextView
             android:id="@+id/tv_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
             android:padding="13dp"
             android:text="注册"
-            android:layout_weight="1"
-            android:textSize="18sp"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:textColor="#ffffff" />
+            android:textColor="@color/text_color_white"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/tv_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
             android:padding="13dp"
             android:text="登录"
-            android:layout_weight="1"
-            android:textSize="18sp"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:textColor="#ffffff" />
+            android:textColor="@color/text_color_white"
+            android:textSize="16sp" />
     </LinearLayout>
 </RelativeLayout>

@@ -75,7 +75,7 @@
                     android:layout_height="wrap_content"
                     android:text="300"
                     android:textSize="@dimen/text_size_18"
-                    android:textColor="@color/card_color_orange"
+                    android:textColor="@color/orange"
                     android:id="@+id/price"
                     android:layout_alignTop="@+id/house_title"
                     android:layout_toLeftOf="@+id/priceUnit"/>
@@ -84,7 +84,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="万"
-                    android:textColor="@color/card_color_orange"
+                    android:textColor="@color/orange"
                     android:id="@+id/priceUnit"
                     android:textSize="@dimen/text_size_12"
                     android:layout_marginTop="5dp"

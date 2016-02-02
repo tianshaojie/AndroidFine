@@ -134,104 +134,10 @@ public class DemoPtrFragment extends Fragment {
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem,
                                  int visibleItemCount, int totalItemCount) {
-                // getLastVisibleItemBitmap(firstVisibleItem+visibleItemCount);
-//                takeScreenShot(context);
             }
         });
 
     }
-
-//    public void takeScreenShot(Activity activity) {
-//        // View是你需要截图的View
-//        View view = activity.getWindow().getDecorView();
-//        view.setDrawingCacheEnabled(true);
-//        view.buildDrawingCache();
-//        Bitmap b1 = view.getDrawingCache();
-//
-//        // 获取状态栏高度
-//        Rect frame = new Rect();
-//        activity.getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
-//        int statusBarHeight = frame.top;
-//        System.out.println(statusBarHeight);
-//
-//        // 获取屏幕长和高
-//        int width = activity.getWindowManager().getDefaultDisplay().getWidth();
-//        int height = activity.getWindowManager().getDefaultDisplay().getHeight();
-//        // 去掉标题栏
-////         Bitmap b = Bitmap.createBitmap(b1, 0, height-120, width, 120);
-//        Bitmap b = Bitmap.createBitmap(b1, 0, statusBarHeight, width, height
-//                - statusBarHeight);
-//        view.destroyDrawingCache();
-//        context.blurFooterBar(b);
-////        return b;
-//    }
-//
-//    private void getLastVisibleItemBitmap(int pos) {
-//        View childView = adapter.getView(pos, null, listView);
-//        if(childView == null) {
-//            return;
-//        }
-//        childView.measure(View.MeasureSpec.makeMeasureSpec(listView.getWidth(), View.MeasureSpec.EXACTLY),
-//                View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
-//
-//        childView.layout(0, 0, childView.getMeasuredWidth(), childView.getMeasuredHeight());
-//        childView.setDrawingCacheEnabled(true);
-//        childView.buildDrawingCache();
-////        return childView.getDrawingCache();
-//        context.blurFooterBar(childView.getDrawingCache());
-//    }
-//
-//    public Bitmap getWholeListViewItemsToBitmap() {
-//        int itemscount       = adapter.getCount();
-//        int allitemsheight   = 0;
-//        List<Bitmap> bmps    = new ArrayList<Bitmap>();
-//
-//        for (int i = 0; i < itemscount; i++) {
-//
-//            View childView      = adapter.getView(i, null, listView);
-//            childView.measure(View.MeasureSpec.makeMeasureSpec(listView.getWidth(), View.MeasureSpec.EXACTLY),
-//                    View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
-//
-//            childView.layout(0, 0, childView.getMeasuredWidth(), childView.getMeasuredHeight());
-//            childView.setDrawingCacheEnabled(true);
-//            childView.buildDrawingCache();
-//            bmps.add(childView.getDrawingCache());
-//            allitemsheight+=childView.getMeasuredHeight();
-//        }
-//
-//        Bitmap bigbitmap    = Bitmap.createBitmap(listView.getMeasuredWidth(), allitemsheight, Bitmap.Config.ARGB_8888);
-//        Canvas bigcanvas    = new Canvas(bigbitmap);
-//
-//        Paint paint = new Paint();
-//        int iHeight = 0;
-//
-//        for (int i = 0; i < bmps.size(); i++) {
-//            Bitmap bmp = bmps.get(i);
-//            bigcanvas.drawBitmap(bmp, 0, iHeight, paint);
-//            iHeight+=bmp.getHeight();
-//
-//            bmp.recycle();
-//            bmp=null;
-//        }
-//
-//
-//        return bigbitmap;
-//    }
-//
-//
-//    private void applyBlur() {
-//        listView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
-//            @Override
-//            public boolean onPreDraw() {
-//                listView.getViewTreeObserver().removeOnPreDrawListener(this);
-//                listView.buildDrawingCache();
-//
-//                Bitmap bmp = listView.getDrawingCache();
-//                context.blurFooterBar(bmp);
-//                return true;
-//            }
-//        });
-//    }
 
     private void initData() {
         param = new SearchParam();

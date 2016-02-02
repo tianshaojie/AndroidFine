@@ -2,42 +2,134 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="@color/background_color"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/tv_test1"
+        android:id="@+id/textBalance"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
+        android:background="@drawable/list_item_selector"
+        android:drawableLeft="@drawable/ic_setting_balance"
+        android:drawablePadding="10dp"
+        android:drawableRight="@drawable/ic_setting_arrow"
         android:gravity="center_vertical"
-        android:padding="15dp"
-        android:text="我的收藏"
+        android:paddingLeft="20dp"
+        android:paddingRight="14dp"
+        android:text="账户余额"
+        android:textColor="@color/text_color_black"
         android:textSize="@dimen/text_size_16" />
 
-    <TextView
-        android:id="@+id/tv_test2"
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:padding="15dp"
-        android:text="看房顾问"
-        android:textSize="@dimen/text_size_16" />
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/list_view_divider" />
 
     <TextView
-        android:id="@+id/tv_test3"
+        android:id="@+id/textRecord"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
+        android:background="@drawable/list_item_selector"
+        android:drawableLeft="@drawable/ic_setting_record"
+        android:drawablePadding="10dp"
+        android:drawableRight="@drawable/ic_setting_arrow"
         android:gravity="center_vertical"
-        android:padding="15dp"
-        android:text="购房须知"
+        android:paddingLeft="20dp"
+        android:paddingRight="14dp"
+        android:text="购房记录"
+        android:textColor="@color/text_color_black"
         android:textSize="@dimen/text_size_16" />
 
-    <TextView
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/list_view_divider" />
+
+    <TextView
+        android:id="@+id/textAttention"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/list_item_selector"
+        android:drawableLeft="@drawable/ic_setting_attention"
+        android:drawablePadding="10dp"
+        android:drawableRight="@drawable/ic_setting_arrow"
         android:gravity="center_vertical"
-        android:padding="15dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="14dp"
+        android:text="关注楼盘"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/text_size_16" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/list_view_divider" />
+
+    <TextView
+        android:id="@+id/textHelp"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/list_item_selector"
+        android:drawableLeft="@drawable/ic_setting_helper"
+        android:drawablePadding="10dp"
+        android:drawableRight="@drawable/ic_setting_arrow"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="14dp"
+        android:text="购房帮助"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/text_size_16" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/list_view_divider" />
+
+    <TextView
+        android:id="@+id/textCalculator"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/list_item_selector"
+        android:drawableLeft="@drawable/ic_calculator"
+        android:drawablePadding="10dp"
+        android:drawableRight="@drawable/ic_setting_arrow"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="14dp"
+        android:text="房贷计算器"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/text_size_16" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/list_view_divider" />
+
+    <TextView
+        android:id="@+id/textSetting"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/list_item_selector"
+        android:drawableLeft="@drawable/ic_setting_setting"
+        android:drawablePadding="10dp"
+        android:drawableRight="@drawable/ic_setting_arrow"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="14dp"
         android:text="设置"
+        android:textColor="@color/text_color_black"
         android:textSize="@dimen/text_size_16" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/list_view_divider" />
 
 </LinearLayout>

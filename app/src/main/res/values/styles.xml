@@ -42,7 +42,7 @@
 		<item name="android:textColor">@color/vpi__background_holo_dark</item>
 	</style>
 
-	<style name="footbar">
+	<style name="footer_bar">
 		<item name="android:layout_width">0dp</item>
 		<item name="android:layout_height">fill_parent</item>
 		<item name="android:layout_weight">1</item>
@@ -51,7 +51,7 @@
 		<item name="android:button">@null</item>
 	</style>
 
-	<style name="main_footbar_radio" parent="footbar">
+	<style name="main_footer_bar_radio" parent="footer_bar">
 		<item name="android:paddingTop">5dp</item>
 		<item name="android:paddingBottom">5dp</item>
 		<item name="android:drawablePadding">3dp</item>
@@ -63,15 +63,14 @@
 		<item name="android:layout_width">wrap_content</item>
 		<item name="android:layout_height">wrap_content</item>
 		<item name="android:textSize">@dimen/text_size_19</item>
-		<item name="android:textColor">@color/head_text</item>
-		<item name="android:shadowColor">@color/main_head_title_shadow_color</item>
+		<item name="android:textColor">@color/text_color_white</item>
 	</style>
 
 	<style name="title_base_button">
 		<item name="android:layout_width">48dp</item>
 		<item name="android:layout_height">match_parent</item>
 		<item name="android:textSize">@dimen/text_size_14</item>
-		<item name="android:textColor">@color/title_base_button_text_color</item>
+		<item name="android:textColor">@color/text_color_gray</item>
 	</style>
 
 	<style name="title_button" parent="title_base_button">

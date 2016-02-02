@@ -20,26 +20,26 @@
 
         <RadioButton
             android:id="@+id/foot_bar_home"
-            style="@style/main_footbar_radio"
+            style="@style/main_footer_bar_radio"
             android:checked="true"
             android:drawableTop="@drawable/widget_bar_home_bg"
             android:text="@string/main_navigation_home" />
 
         <RadioButton
             android:id="@+id/foot_bar_im"
-            style="@style/main_footbar_radio"
+            style="@style/main_footer_bar_radio"
             android:drawableTop="@drawable/widget_bar_im_bg"
             android:text="@string/main_navigation_im" />
 
         <RadioButton
             android:id="@+id/foot_bar_interest"
-            style="@style/main_footbar_radio"
+            style="@style/main_footer_bar_radio"
             android:drawableTop="@drawable/widget_bar_interest_bg"
             android:text="@string/main_navigation_interest" />
 
         <RadioButton
             android:id="@+id/main_footbar_user"
-            style="@style/main_footbar_radio"
+            style="@style/main_footer_bar_radio"
             android:drawableTop="@drawable/widget_bar_user_bg"
             android:text="@string/main_navigation_user" />
     </RadioGroup>

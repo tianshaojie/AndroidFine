@@ -1,19 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
 
-    <color name="status_bar_bg">#EF3A19</color>
-    <color name="main_header_bg">#EF3A19</color>
-    <color name="main_footer_bg">#f5f5f5</color>
+	<!-- 设计规范颜色值 begin -->
+
+	<!-- 主背景色值 -->
+	<color name="background_color">#fff8f8f8</color>
+	<color name="status_bar_bg">#EF3A19</color>
+	<color name="main_header_bg">#EF3A19</color>
+	<color name="main_footer_bg">#f5f5f5</color>
 
 	<!-- 底栏字体颜色 -->
 	<color name="footer_text_color_normal">#343434</color>
 	<color name="footer_text_color_selected">#FF601C</color>
 
+	<!-- 字体颜色值 -->
+	<color name="text_color_blue">#0081E1</color>
+	<color name="text_color_black">#323232</color>
+	<color name="text_color_white">#ffffff</color>
+	<color name="text_color_gray">#888888</color>
+	<color name="text_color_gray_light">#A8A8A8</color>
+	<color name="text_color_red">#FF5B46</color>
+	<color name="text_color_hint">#ffaaaaaa</color>
+	<color name="text_color_input">#ff111111</color>
 
-	<color name="bg_bar">#383838</color>
+	<color name="btn_blue_normal">#0081E1</color>
+	<color name="btn_blue_pressed">#0066FF</color>
+
+	<!-- 分割线色值 -->
+	<color name="short_blue">#48B7FF</color>
+	<color name="short_red">#FF5B46</color>
+	<color name="short_orange">#F3B720</color>
+	<color name="split_color">#D9D9D9</color>
+	<color name="border_color">#A8A8A8</color>
+
+	<!--竖分割线-->
+	<color name="vertical_line_color">#B5B5B5</color>
+
+	<!-- 透明半透明色值 -->
 	<color name="transparent">#00000000</color>
+	<color name="transparent_half">#66000000</color>
+
+	<!-- 设计规范颜色值 end-->
+
+	<!-- 黑白色值 -->
 	<color name="white">#FFFFFF</color>
 	<color name="black">#000000</color>
+	<color name="orange">#FFA500</color>
 	<color name="gray">#808080</color>
 	<color name="red">#FF0000</color>
 	<color name="gold">#FFD700</color>
@@ -22,47 +54,10 @@
 	<color name="blue">#0000FF</color>
 	<color name="purple">#800080</color>
 	<color name="pink">#FFC0CB</color>
-	<color name="orange">#FFA500</color>
 	<color name="yellow_lemon">#FFFACD</color>
 	<color name="gray_light">#DFDFDF</color>
 	<color name="gray_white">#F5F5F5</color>
 	<color name="gray_slate">#708090</color>
 	<color name="blue_light">#0083FF</color>
-
-	<!-- 头部文字颜色 -->
-	<color name="background_color">#ffffffff</color>
-	<color name="head_text">#0e5986</color>
-	<color name="main_head_title">#ffffff</color>
-	<color name="main_head_title_shadow_color">#ffffffff</color>
-	<color name="company_name_color">#959595</color>
-	<color name="title_base_button_text_color">#ffffff</color>
-	<color name="list_view_bg">#efefef</color>
-
-	<color name="card_color_red">#fa8282</color>
-	<color name="card_color_orange">#ff8048</color>
-	<color name="card_color_yellow">#ffd237</color>
-	<color name="card_color_green">#abbf4f</color>
-	<color name="card_color_blue">#55b3da</color>
-	<color name="card_color_purple">#ae7fc7</color>
-
-	<!-- 手势密码 -->
-	<color name="color_security_bg">#203c54</color>
-	<color name="color_security_press">#38c9ff</color>
-
-	<!-- 通用 -->
-	<color name="color_text_grey">#49596b</color>
-	<color name="futures_green">#ff40ab5e</color>
-	<color name="futures_red">#d13939</color>
-	<color name="color_login">#292c35</color>
-	<color name="color_white">#ffffff</color>
-	<color name="color_yellow">#fece00</color>
-	<color name="color_grey">#919aac</color>
-	<color name="color_blue">#04d6fc</color>
-	<color name="color_black">#20242b</color>
-	<color name="color_text_value_grey">#8e9aab</color>
-	<color name="color_cell_grey">#d7dbe2</color>
-	<color name="color_yubibao_asset_bg">#e6eaf0</color>
-	<color name="color_red1">#ef3f2f</color>
-	<color name="color_red">#d13a38</color>
 
 </resources>

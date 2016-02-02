@@ -25,7 +25,7 @@
         android:maxWidth="180dp"
         android:singleLine="true"
         android:text="AndroidFine"
-        android:textColor="@color/main_head_title"
+        android:textColor="@color/text_color_white"
         android:textSize="@dimen/text_size_20" />
 
 </RelativeLayout>
