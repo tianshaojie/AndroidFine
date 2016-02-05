@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/progress_bg_default"
+        android:gravity="center"
+        android:minWidth="@dimen/size_minwidth_svprogresshuddefault"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_svprogresshuddefault">
+
+        <ImageView
+            android:id="@+id/ivBigLoading"
+            android:layout_width="@dimen/size_image_bigloading"
+            android:layout_height="@dimen/size_image_bigloading"
+            android:scaleType="fitCenter"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/ivSmallLoading"
+            android:layout_width="@dimen/size_image_smallloading"
+            android:layout_height="@dimen/size_image_smallloading"
+            android:scaleType="centerInside"
+            android:visibility="gone" />
+
+        <com.yuzhi.fine.base.ui.progress.CircleProgressBar
+            android:id="@+id/circleProgressBar"
+            android:layout_width="@dimen/size_image_smallloading"
+            android:layout_height="@dimen/size_image_smallloading"
+            app:roundColor="@color/roundColor_svprogresshuddefault"
+            app:roundProgressColor="@color/roundProgressColor_svprogresshuddefault"
+            app:roundWidth="2dip"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margintop_svprogresshuddefault_msg"
+            android:gravity="center"
+            android:textColor="@color/textColor_svprogresshuddefault_msg"
+            android:textSize="@dimen/textSize_svprogresshuddefault_msg"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</LinearLayout>

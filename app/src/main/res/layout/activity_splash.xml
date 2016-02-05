@@ -19,7 +19,7 @@
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent" />
 
-	<com.yuzhi.fine.ui.viewpagerindicator.CirclePageIndicator
+	<com.yuzhi.fine.base.ui.viewpagerindicator.CirclePageIndicator
 		android:visibility="gone"
 		android:id="@+id/indicator"
 		android:layout_width="match_parent"

@@ -9,7 +9,7 @@
 			layout="@layout/loading"
 			android:visibility="gone"/>
 	-->
-	<com.yuzhi.fine.ui.pulltorefresh.PullToRefreshListView
+	<com.yuzhi.fine.base.ui.pulltorefresh.PullToRefreshListView
 			xmlns:ptr="http://schemas.android.com/apk/res-auto"
 			android:id="@+id/listView"
 			ptr:ptrAnimationStyle="flip"

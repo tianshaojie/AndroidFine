@@ -6,7 +6,7 @@
 	android:layout_height="fill_parent"
 	android:background="@null">
 
-	<com.yuzhi.fine.ui.tabstrip.PagerSlidingTabStrip
+	<com.yuzhi.fine.base.ui.tabstrip.PagerSlidingTabStrip
 			android:id="@+id/tabs"
 			android:layout_width="match_parent"
 			android:layout_height="38dip"

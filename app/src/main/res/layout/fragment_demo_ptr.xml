@@ -17,7 +17,7 @@
         cube_ptr:ptr_resistance="1.7">
 
 
-        <com.yuzhi.fine.ui.loadmore.LoadMoreListView
+        <com.yuzhi.fine.base.ui.listview.LoadMoreListView
             android:id="@+id/listView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

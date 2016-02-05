@@ -26,12 +26,12 @@
                 android:layout_height="160dp"
                 android:background="@color/white">
 
-                <com.yuzhi.fine.ui.loopviewpager.AutoLoopViewPager
+                <com.yuzhi.fine.base.ui.loopviewpager.AutoLoopViewPager
                     android:id="@+id/pager"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent" />
 
-                <com.yuzhi.fine.ui.viewpagerindicator.CirclePageIndicator
+                <com.yuzhi.fine.base.ui.viewpagerindicator.CirclePageIndicator
                     android:id="@+id/indicator"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
