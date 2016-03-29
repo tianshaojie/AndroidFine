@@ -19,6 +19,8 @@
 * 各种utils，拿来就可以用
 * [Android编码规范](http://tianshaojie.github.io/android-code-style)，简单才能规范(已更新，更合理，欢迎建议)
 
+## QQ群
+ * 190443010，欢迎加群交流。
 
 ## 精致Demo
 
@@ -38,7 +40,4 @@
 
 [Download AndroidFine.apk](http://files.cnblogs.com/files/purediy/AndroidFine.apk)
 
-## 捐赠
-
-![](https://tfsimg.alipay.com/images/mobilecodec/T16gVjXXRiXXXXXXXX)
 
