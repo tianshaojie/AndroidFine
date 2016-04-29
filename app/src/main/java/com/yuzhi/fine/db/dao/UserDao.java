@@ -1,9 +1,10 @@
 package com.yuzhi.fine.db.dao;
 
 import android.content.Context;
+
+import com.j256.ormlite.dao.Dao;
 import com.yuzhi.fine.db.DatabaseHelper;
 import com.yuzhi.fine.db.entity.User;
-import com.j256.ormlite.dao.Dao;
 
 import java.sql.SQLException;
 

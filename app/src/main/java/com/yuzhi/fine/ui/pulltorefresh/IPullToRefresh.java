@@ -17,6 +17,7 @@ package com.yuzhi.fine.ui.pulltorefresh;
 
 import android.view.View;
 import android.view.animation.Interpolator;
+
 import com.yuzhi.fine.ui.pulltorefresh.PullToRefreshBase.Mode;
 import com.yuzhi.fine.ui.pulltorefresh.PullToRefreshBase.OnPullEventListener;
 import com.yuzhi.fine.ui.pulltorefresh.PullToRefreshBase.OnRefreshListener2;

@@ -18,6 +18,7 @@ package com.yuzhi.fine.ui.pulltorefresh;
 import android.annotation.TargetApi;
 import android.util.Log;
 import android.view.View;
+
 import com.yuzhi.fine.ui.pulltorefresh.PullToRefreshBase.Mode;
 import com.yuzhi.fine.ui.pulltorefresh.PullToRefreshBase.State;
 

@@ -2,13 +2,14 @@ package com.yuzhi.fine.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
-import com.yuzhi.fine.db.entity.Article;
-import com.yuzhi.fine.db.entity.Student;
-import com.yuzhi.fine.db.entity.User;
+
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
+import com.yuzhi.fine.db.entity.Article;
+import com.yuzhi.fine.db.entity.Student;
+import com.yuzhi.fine.db.entity.User;
 
 import java.sql.SQLException;
 import java.util.HashMap;

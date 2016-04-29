@@ -25,6 +25,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView.ScaleType;
+
 import com.yuzhi.fine.R;
 import com.yuzhi.fine.ui.pulltorefresh.PullToRefreshBase.Mode;
 import com.yuzhi.fine.ui.pulltorefresh.PullToRefreshBase.Orientation;

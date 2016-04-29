@@ -34,6 +34,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
 import com.yuzhi.fine.R;
 import com.yuzhi.fine.ui.pulltorefresh.ILoadingLayout;
 import com.yuzhi.fine.ui.pulltorefresh.PullToRefreshBase.Mode;

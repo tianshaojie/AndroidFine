@@ -3,7 +3,6 @@ package com.yuzhi.fine.common;
 import android.app.Application;
 
 import com.squareup.leakcanary.LeakCanary;
-import com.squareup.leakcanary.RefWatcher;
 
 public class AppContext extends Application {
 

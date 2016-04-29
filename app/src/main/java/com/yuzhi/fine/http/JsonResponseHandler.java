@@ -2,11 +2,12 @@ package com.yuzhi.fine.http;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.squareup.okhttp.Headers;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
 
 import java.io.IOException;
+
+import okhttp3.Headers;
+import okhttp3.Request;
+import okhttp3.Response;
 
 /**
  * Created by tiansj on 15/8/28.

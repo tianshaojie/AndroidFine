@@ -18,6 +18,7 @@ package com.yuzhi.fine.ui.pulltorefresh.extras;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.webkit.WebView;
+
 import com.yuzhi.fine.ui.pulltorefresh.PullToRefreshWebView;
 
 import java.util.concurrent.atomic.AtomicBoolean;

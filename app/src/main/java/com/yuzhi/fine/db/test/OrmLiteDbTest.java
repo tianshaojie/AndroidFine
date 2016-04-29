@@ -1,6 +1,7 @@
 package com.yuzhi.fine.db.test;
 
 import android.test.AndroidTestCase;
+
 import com.j256.ormlite.dao.Dao;
 import com.yuzhi.fine.db.DatabaseHelper;
 import com.yuzhi.fine.db.dao.ArticleDao;

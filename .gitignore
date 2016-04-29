@@ -102,3 +102,5 @@ app/app.iml
 app/app.iml
 
 local.properties
+
+.idea/libraries/renderscript_v8.xml

@@ -22,11 +22,11 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 
-import com.squareup.okhttp.Headers;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
-
 import java.io.IOException;
+
+import okhttp3.Headers;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class HttpResponseHandler {
     protected static final int SUCCESS_MESSAGE = 0;

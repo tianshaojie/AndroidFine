@@ -8,39 +8,66 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONException;
-import com.alibaba.fastjson.JSONObject;
-import com.squareup.okhttp.Callback;
-import com.squareup.okhttp.MediaType;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.RequestBody;
-import com.squareup.okhttp.Response;
 import com.yuzhi.fine.R;
 import com.yuzhi.fine.common.AppContext;
 import com.yuzhi.fine.model.SearchParam;
 
-import org.apache.http.client.utils.URLEncodedUtils;
-import org.apache.http.message.BasicNameValuePair;
-
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
+import java.net.URLEncoder;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Interceptor;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 /**
  * Created by tiansj on 15/2/27.
  */
 public class HttpClient {
 
+    private static final int CONNECT_TIME_OUT = 10;
+    private static final int WRITE_TIME_OUT = 60;
+    private static final int READ_TIME_OUT = 60;
+    private static final int MAX_REQUESTS_PER_HOST = 10;
+    private static final String TAG = HttpClient.class.getSimpleName();
     private static final String UTF_8 = "UTF-8";
     private static final MediaType MEDIA_TYPE = MediaType.parse("text/plain;");
-    private static final OkHttpClient client = new OkHttpClient();
+    private static OkHttpClient client;
+
     static {
-        client.setConnectTimeout(30, TimeUnit.SECONDS);
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        builder.connectTimeout(CONNECT_TIME_OUT, TimeUnit.SECONDS);
+        builder.writeTimeout(WRITE_TIME_OUT, TimeUnit.SECONDS);
+        builder.readTimeout(READ_TIME_OUT, TimeUnit.SECONDS);
+        builder.networkInterceptors().add(new LoggingInterceptor());
+        client = builder.build();
+        client.dispatcher().setMaxRequestsPerHost(MAX_REQUESTS_PER_HOST);
+    }
+
+    static class LoggingInterceptor implements Interceptor {
+        @Override
+        public Response intercept(Interceptor.Chain chain) throws IOException {
+            Request request = chain.request();
+
+            long t1 = System.nanoTime();
+            Log.i(TAG, String.format("Sending request %s on %s%n%s",
+                    request.url(), chain.connection(), request.headers()));
+
+            Response response = chain.proceed(request);
+
+            long t2 = System.nanoTime();
+            Log.i(TAG, String.format("Received response for %s in %.1fms%n%s",
+                    response.request().url(), (t2 - t1) / 1e6d, response.headers()));
+            return response;
+        }
     }
 
     public static boolean isNetworkAvailable() {
@@ -54,51 +81,69 @@ public class HttpClient {
         return false;
     }
 
-    public static void get(String url, List<BasicNameValuePair> pairs, final HttpResponseHandler httpResponseHandler) {
+    public static void get(String url, Map<String, String> param, final HttpResponseHandler httpResponseHandler) {
         if (!isNetworkAvailable()) {
             Toast.makeText(AppContext.getInstance(), R.string.no_network_connection_toast, Toast.LENGTH_SHORT).show();
             return;
         }
-        if(pairs != null && pairs.size() > 0) {
-            url = url + "?" + URLEncodedUtils.format(pairs, UTF_8);
+        if(param != null && param.size() > 0) {
+            url = url + "?" + mapToQueryString(param);
         }
         Request request = new Request.Builder().url(url).build();
         client.newCall(request).enqueue(new Callback() {
             @Override
-            public void onResponse(Response response) throws IOException {
+            public void onResponse(Call call, Response response) throws IOException {
                 httpResponseHandler.sendSuccessMessage(response);
             }
 
             @Override
-            public void onFailure(Request request, IOException e) {
-                httpResponseHandler.sendFailureMessage(request, e);
+            public void onFailure(Call call, IOException e) {
+                httpResponseHandler.sendFailureMessage(call.request(), e);
             }
         });
     }
 
-    public static void post(String url, List<BasicNameValuePair> pairs, final HttpResponseHandler handler) {
+    public static void post(String url, Map<String, String> param, final HttpResponseHandler handler) {
         if (!isNetworkAvailable()) {
             Toast.makeText(AppContext.getInstance(), R.string.no_network_connection_toast, Toast.LENGTH_SHORT).show();
             return;
         }
-        String param = "";
-        if(pairs != null && pairs.size() > 0) {
-            param = URLEncodedUtils.format(pairs, UTF_8);
-            url = url + "?" + param;
+        String paramStr = "";
+        if(param != null && param.size() > 0) {
+            paramStr = url += mapToQueryString(param);;
+            url = url + "?" + paramStr;
         }
-        RequestBody body = RequestBody.create(MEDIA_TYPE, param);
+        RequestBody body = RequestBody.create(MEDIA_TYPE, paramStr);
         Request request = new Request.Builder().url(url).post(body).build();
         client.newCall(request).enqueue(new Callback() {
             @Override
-            public void onResponse(Response response) {
+            public void onResponse(Call call, Response response) throws IOException {
                 handler.sendSuccessMessage(response);
             }
 
             @Override
-            public void onFailure(Request request, IOException e) {
-                handler.sendFailureMessage(request, e);
+            public void onFailure(Call call, IOException e) {
+                handler.sendFailureMessage(call.request(), e);
             }
         });
+    }
+
+    public static String mapToQueryString(Map<String, String> map) {
+        StringBuilder string = new StringBuilder();
+        /*if(map.size() > 0) {
+            string.append("?");
+        }*/
+        try {
+            for(Map.Entry<String, String> entry : map.entrySet()) {
+                string.append(entry.getKey());
+                string.append("=");
+                string.append(URLEncoder.encode(entry.getValue(), UTF_8));
+                string.append("&");
+            }
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return string.toString();
     }
 
     //*************************************************************//
@@ -120,12 +165,11 @@ public class HttpClient {
         String paramStr = JSON.toJSONString(param);
         paramStr = Base64.encodeToString(paramStr.getBytes(), Base64.DEFAULT);
 
-        List<BasicNameValuePair> rq = new ArrayList<BasicNameValuePair>();
-        rq.add(new BasicNameValuePair("m", SHOP_RECOMMEND));
-        rq.add(new BasicNameValuePair("p", paramStr));
-
-        String url = HTTP_DOMAIN + "?" + URLEncodedUtils.format(rq, UTF_8);
-        get(url, rq, httpResponseHandler);
+        HashMap<String, String> rq = new HashMap<>();
+        rq.put("m", SHOP_RECOMMEND);
+        rq.put("p", paramStr);
+//        String url = HTTP_DOMAIN + "?" + URLEncodedUtils.format(rq, UTF_8);
+        get(HTTP_DOMAIN, rq, httpResponseHandler);
     }
     //*************************************************************//
 }

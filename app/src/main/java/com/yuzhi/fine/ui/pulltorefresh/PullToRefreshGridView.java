@@ -22,6 +22,7 @@ import android.os.Build.VERSION_CODES;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.GridView;
+
 import com.yuzhi.fine.R;
 import com.yuzhi.fine.ui.pulltorefresh.internal.EmptyViewMethodAccessor;
 

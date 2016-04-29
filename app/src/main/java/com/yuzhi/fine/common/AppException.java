@@ -2,15 +2,12 @@ package com.yuzhi.fine.common;
 
 import android.os.Environment;
 
-import org.apache.http.HttpException;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.Thread.UncaughtExceptionHandler;
 import java.net.ConnectException;
-import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.util.Date;
 
@@ -135,17 +132,6 @@ public class AppException extends Exception implements UncaughtExceptionHandler 
 
     public static AppException xml(Exception e) {
         return new AppException(TYPE_XML, 0, e);
-    }
-
-    public static AppException network(Exception e) {
-        if (e instanceof UnknownHostException || e instanceof ConnectException) {
-            return new AppException(TYPE_NETWORK, 0, e);
-        } else if (e instanceof HttpException) {
-            return http(e);
-        } else if (e instanceof SocketException) {
-            return socket(e);
-        }
-        return http(e);
     }
 
     public static AppException run(Exception e) {

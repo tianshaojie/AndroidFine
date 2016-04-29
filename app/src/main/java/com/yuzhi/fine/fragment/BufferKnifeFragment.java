@@ -13,11 +13,10 @@ import android.widget.ListView;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.squareup.okhttp.Request;
 import com.squareup.picasso.Picasso;
 import com.yuzhi.fine.R;
-import com.yuzhi.fine.http.HttpResponseHandler;
 import com.yuzhi.fine.http.HttpClient;
+import com.yuzhi.fine.http.HttpResponseHandler;
 import com.yuzhi.fine.model.SearchParam;
 import com.yuzhi.fine.model.SearchShop;
 import com.yuzhi.fine.ui.UIHelper;
@@ -31,6 +30,7 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import okhttp3.Request;
 
 
 public class BufferKnifeFragment extends Fragment {

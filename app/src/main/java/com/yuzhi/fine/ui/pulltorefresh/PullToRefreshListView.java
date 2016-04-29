@@ -25,7 +25,12 @@ import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.*;
+import android.widget.FrameLayout;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+
 import com.yuzhi.fine.R;
 import com.yuzhi.fine.http.HttpClient;
 import com.yuzhi.fine.ui.pulltorefresh.internal.EmptyViewMethodAccessor;

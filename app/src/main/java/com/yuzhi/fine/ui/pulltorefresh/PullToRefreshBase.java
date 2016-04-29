@@ -24,13 +24,22 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.*;
+import android.view.Gravity;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewConfiguration;
+import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+
 import com.yuzhi.fine.R;
-import com.yuzhi.fine.ui.pulltorefresh.internal.*;
+import com.yuzhi.fine.ui.pulltorefresh.internal.FlipLoadingLayout;
+import com.yuzhi.fine.ui.pulltorefresh.internal.LoadingLayout;
+import com.yuzhi.fine.ui.pulltorefresh.internal.RotateLoadingLayout;
+import com.yuzhi.fine.ui.pulltorefresh.internal.Utils;
+import com.yuzhi.fine.ui.pulltorefresh.internal.ViewCompat;
 
 public abstract class PullToRefreshBase<T extends View> extends LinearLayout implements IPullToRefresh<T> {
 

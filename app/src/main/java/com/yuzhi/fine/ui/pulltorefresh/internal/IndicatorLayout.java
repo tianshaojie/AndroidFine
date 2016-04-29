@@ -20,11 +20,16 @@ import android.content.Context;
 import android.graphics.Matrix;
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.view.animation.*;
+import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
+import android.view.animation.AnimationUtils;
+import android.view.animation.Interpolator;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
+
 import com.yuzhi.fine.R;
 import com.yuzhi.fine.ui.pulltorefresh.PullToRefreshBase.Mode;
 
