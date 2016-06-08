@@ -20,7 +20,6 @@ import java.util.Arrays;
 public class MainActivity extends BaseFragmentActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
-    private static final String FRAGMENT_TAGS = "fragmentTags";
     private static final String CURR_INDEX = "currIndex";
     private static int currIndex = 0;
 
@@ -34,36 +33,30 @@ public class MainActivity extends BaseFragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         fragmentManager = getSupportFragmentManager();
-        if (savedInstanceState == null) {
-            initData();
-            initView();
-        } else {
-            initFromSavedInstantsState(savedInstanceState);
-        }
+        initData(savedInstanceState);
+        initView();
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt(CURR_INDEX, currIndex);
-        outState.putStringArrayList(FRAGMENT_TAGS, fragmentTags);
     }
 
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        initFromSavedInstantsState(savedInstanceState);
-    }
-
-    private void initFromSavedInstantsState(Bundle savedInstanceState) {
-        currIndex = savedInstanceState.getInt(CURR_INDEX);
-        fragmentTags = savedInstanceState.getStringArrayList(FRAGMENT_TAGS);
-        showFragment();
-    }
-
-    private void initData() {
-        currIndex = 0;
+    private void initData(Bundle savedInstanceState) {
         fragmentTags = new ArrayList<>(Arrays.asList("HomeFragment", "ImFragment", "InterestFragment", "MemberFragment"));
+        currIndex = 0;
+        if(savedInstanceState != null) {
+            currIndex = savedInstanceState.getInt(CURR_INDEX);
+            hideSavedFragment();
+        }
+    }
+
+    private void hideSavedFragment() {
+        Fragment fragment = fragmentManager.findFragmentByTag(fragmentTags.get(currIndex));
+        if(fragment != null) {
+            fragmentManager.beginTransaction().hide(fragment).commit();
+        }
     }
 
     private void initView() {
