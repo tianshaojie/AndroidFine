@@ -54,7 +54,7 @@ public class SplashActivity extends FragmentActivity {
             public void run() {
                 UIHelper.showHome(SplashActivity.this);
             }
-        }, 500);
+        }, 2000);
     }
 
     private void initGuideGallery() {
