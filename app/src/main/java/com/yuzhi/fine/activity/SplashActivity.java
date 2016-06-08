@@ -38,21 +38,18 @@ public class SplashActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        boolean firstTimeUse = SharedPreferences.getInstance().getBoolean("first-time-use", true);
-        if(firstTimeUse) {
-            initGuideGallery();
-        } else {
-            initLaunchLogo();
-        }
-    }
-
-    private void initLaunchLogo() {
-        ImageView guideImage = (ImageView) findViewById(R.id.guideImage);
-        guideImage.setVisibility(View.VISIBLE);
+        final boolean firstTimeUse = SharedPreferences.getInstance().getBoolean("first-time-use", true);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                UIHelper.showHome(SplashActivity.this);
+                if(firstTimeUse) {
+                    Animation fadeOut = AnimationUtils.loadAnimation(SplashActivity.this, R.anim.fadeout);
+                    fadeOut.setFillAfter(true);
+                    findViewById(R.id.guideImage).startAnimation(fadeOut);
+                    initGuideGallery();
+                } else {
+                    UIHelper.showHome(SplashActivity.this);
+                }
             }
         }, 2000);
     }

@@ -5,14 +5,6 @@
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent">
 
-	<ImageView
-		android:visibility="gone"
-		android:id="@+id/guideImage"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:scaleType="centerCrop"
-		android:src="@drawable/newer04"/>
-
 	<android.support.v4.view.ViewPager
 		android:visibility="gone"
 		android:id="@+id/pager"
@@ -43,5 +35,12 @@
 		android:layout_alignParentBottom="true"
 		android:layout_centerHorizontal="true"
 		android:layout_marginBottom="60dp" />
+
+	<ImageView
+		android:id="@+id/guideImage"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:scaleType="centerCrop"
+		android:src="@drawable/newer04"/>
 
 </RelativeLayout>
