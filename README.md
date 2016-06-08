@@ -22,6 +22,10 @@
 ## QQ群
  * 190443010，欢迎加群交流。
 
+## 类文件描述
+
+![](https://github.com/tianshaojie/AndroidFine/blob/master/doc.png)
+
 ## 精致Demo
 
 ![](http://images0.cnblogs.com/blog2015/275810/201508/232033560975081.jpg)
