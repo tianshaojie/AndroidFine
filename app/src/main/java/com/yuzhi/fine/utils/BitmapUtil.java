@@ -44,7 +44,7 @@ public class BitmapUtil {
     }
 
     // 从sd卡上加载图片
-    public static Bitmap decodeSampledBitmapFromFd(String pathName, int reqWidth, int reqHeight) {
+    public static Bitmap decodeSampledBitmapFromSd(String pathName, int reqWidth, int reqHeight) {
         final BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeFile(pathName, options);
