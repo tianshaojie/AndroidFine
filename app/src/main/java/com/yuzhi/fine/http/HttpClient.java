@@ -3,6 +3,7 @@ package com.yuzhi.fine.http;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
 import android.widget.Toast;
@@ -81,7 +82,7 @@ public class HttpClient {
         return false;
     }
 
-    public static void get(String url, Map<String, String> param, final HttpResponseHandler httpResponseHandler) {
+    public static void get(String url, Map<String, String> param, final HttpResponseHandler handler) {
         if (!isNetworkAvailable()) {
             Toast.makeText(AppContext.getInstance(), R.string.no_network_connection_toast, Toast.LENGTH_SHORT).show();
             return;
@@ -92,13 +93,18 @@ public class HttpClient {
         Request request = new Request.Builder().url(url).build();
         client.newCall(request).enqueue(new Callback() {
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                httpResponseHandler.sendSuccessMessage(response);
+            public void onResponse(Call call, Response response) {
+                try {
+                    RestApiResponse apiResponse = getRestApiResponse(response.body().toString());
+                    handler.sendSuccessMessage(apiResponse);
+                } catch (Exception e) {
+                    handler.sendFailureMessage(call.request(), e);
+                }
             }
 
             @Override
             public void onFailure(Call call, IOException e) {
-                httpResponseHandler.sendFailureMessage(call.request(), e);
+                handler.sendFailureMessage(call.request(), e);
             }
         });
     }
@@ -117,8 +123,13 @@ public class HttpClient {
         Request request = new Request.Builder().url(url).post(body).build();
         client.newCall(request).enqueue(new Callback() {
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                handler.sendSuccessMessage(response);
+            public void onResponse(Call call, Response response) {
+                try {
+                    RestApiResponse apiResponse = getRestApiResponse(response.body().toString());
+                    handler.sendSuccessMessage(apiResponse);
+                } catch (Exception e) {
+                    handler.sendFailureMessage(call.request(), e);
+                }
             }
 
             @Override
@@ -126,6 +137,24 @@ public class HttpClient {
                 handler.sendFailureMessage(call.request(), e);
             }
         });
+    }
+
+    private static RestApiResponse getRestApiResponse(String responseBody) throws Exception {
+        if(!isJsonString(responseBody)) {
+            throw new Exception("server response not json string (response = " + responseBody + ")");
+        }
+        RestApiResponse apiResponse = JSON.parseObject(responseBody, RestApiResponse.class);
+        if(apiResponse == null && apiResponse.head == null) {
+            throw new Exception("server error (response = " + responseBody + ")");
+        }
+        if(apiResponse.head.status == RestApiResponse.STATUS_SUCCESS) {
+            throw new Exception("server error (business status code = " + apiResponse.head.status + "; response =" + responseBody + ")");
+        }
+        return apiResponse;
+    }
+
+    private static boolean isJsonString(String responseBody) {
+        return TextUtils.isEmpty(responseBody) && (responseBody.startsWith("{") && responseBody.endsWith("}"));
     }
 
     public static String mapToQueryString(Map<String, String> map) {

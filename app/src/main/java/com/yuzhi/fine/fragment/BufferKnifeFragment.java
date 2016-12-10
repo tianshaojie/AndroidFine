@@ -17,6 +17,7 @@ import com.squareup.picasso.Picasso;
 import com.yuzhi.fine.R;
 import com.yuzhi.fine.http.HttpClient;
 import com.yuzhi.fine.http.HttpResponseHandler;
+import com.yuzhi.fine.http.RestApiResponse;
 import com.yuzhi.fine.model.SearchParam;
 import com.yuzhi.fine.model.SearchShop;
 import com.yuzhi.fine.ui.UIHelper;
@@ -25,7 +26,6 @@ import com.yuzhi.fine.ui.pulltorefresh.PullToRefreshListView;
 import com.yuzhi.fine.ui.quickadapter.BaseAdapterHelper;
 import com.yuzhi.fine.ui.quickadapter.QuickAdapter;
 
-import java.io.IOException;
 import java.util.List;
 
 import butterknife.Bind;
@@ -127,10 +127,9 @@ public class BufferKnifeFragment extends Fragment {
         HttpClient.getRecommendShops(param, new HttpResponseHandler() {
 
             @Override
-            public void onSuccess(String body) {
+            public void onSuccess(RestApiResponse response) {
                 listView.onRefreshComplete();
-                JSONObject object = JSON.parseObject(body);
-                List<SearchShop> list = JSONArray.parseArray(object.getString("body"), SearchShop.class);
+                List<SearchShop> list = JSONArray.parseArray(response.body, SearchShop.class);
                 listView.updateLoadMoreViewText(list);
                 isLoadAll = list.size() < HttpClient.PAGE_SIZE;
                 if(pno == 1) {
@@ -141,7 +140,7 @@ public class BufferKnifeFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Request request, IOException e) {
+            public void onFailure(Request request, Exception e) {
                 listView.onRefreshComplete();
                 listView.setLoadMoreViewTextError();
             }

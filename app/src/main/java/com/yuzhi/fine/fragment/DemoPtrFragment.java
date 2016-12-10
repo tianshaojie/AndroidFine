@@ -17,6 +17,7 @@ import com.yuzhi.fine.R;
 import com.yuzhi.fine.activity.MainActivity;
 import com.yuzhi.fine.http.HttpClient;
 import com.yuzhi.fine.http.HttpResponseHandler;
+import com.yuzhi.fine.http.RestApiResponse;
 import com.yuzhi.fine.model.SearchParam;
 import com.yuzhi.fine.model.SearchShop;
 import com.yuzhi.fine.ui.UIHelper;
@@ -25,7 +26,6 @@ import com.yuzhi.fine.ui.quickadapter.BaseAdapterHelper;
 import com.yuzhi.fine.ui.quickadapter.QuickAdapter;
 import com.yuzhi.fine.utils.DeviceUtil;
 
-import java.io.IOException;
 import java.util.List;
 
 import butterknife.Bind;
@@ -152,10 +152,9 @@ public class DemoPtrFragment extends Fragment {
         param.setPno(pno);
         HttpClient.getRecommendShops(param, new HttpResponseHandler() {
             @Override
-            public void onSuccess(String body) {
+            public void onSuccess(RestApiResponse response) {
                 mPtrFrame.refreshComplete();
-                JSONObject object = JSON.parseObject(body);
-                List<SearchShop> list = JSONArray.parseArray(object.getString("body"), SearchShop.class);
+                List<SearchShop> list = JSONArray.parseArray(response.body, SearchShop.class);
                 listView.updateLoadMoreViewText(list);
                 isLoadAll = list.size() < HttpClient.PAGE_SIZE;
                 if(pno == 1) {
@@ -166,7 +165,7 @@ public class DemoPtrFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Request request, IOException e) {
+            public void onFailure(Request request, Exception e) {
                 mPtrFrame.refreshComplete();
                 listView.setLoadMoreViewTextError();
             }
