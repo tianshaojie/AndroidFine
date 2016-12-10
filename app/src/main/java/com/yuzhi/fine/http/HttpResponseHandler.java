@@ -22,11 +22,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 
-import java.io.IOException;
-
-import okhttp3.Headers;
 import okhttp3.Request;
-import okhttp3.Response;
 
 public class HttpResponseHandler {
     protected static final int SUCCESS_MESSAGE = 0;
@@ -56,30 +52,9 @@ public class HttpResponseHandler {
     /**
      * Fired when a request returns successfully, override to handle in your own code
      *
-     * @param content the body of the HTTP response from the server
+     * @param response the body of the HTTP RESTApi response from the server
      */
-    public void onSuccess(String content) {
-    }
-
-    /**
-     * Fired when a request returns successfully, override to handle in your own code
-     *
-     * @param statusCode the status code of the response
-     * @param headers    the headers of the HTTP response
-     * @param content    the body of the HTTP response from the server
-     */
-    public void onSuccess(int statusCode, Headers headers, String content) {
-        onSuccess(statusCode, content);
-    }
-
-    /**
-     * Fired when a request returns successfully, override to handle in your own code
-     *
-     * @param statusCode the status code of the response
-     * @param content    the body of the HTTP response from the server
-     */
-    public void onSuccess(int statusCode, String content) {
-        onSuccess(content);
+    public void onSuccess(RestApiResponse response) {
     }
 
     /**
@@ -88,23 +63,22 @@ public class HttpResponseHandler {
      * exchange, it is possible that the remote server accepted the request
      * before the failure.
      */
-    public void onFailure(Request request, IOException e) {
+    public void onFailure(Request request, Exception e) {
     }
-
 
     //
     // 后台线程调用方法，通过Handler sendMessage把结果转到UI主线程
     //
 
-    protected void sendSuccessMessage(Response response) {
+    protected void sendSuccessMessage(RestApiResponse response) {
         try {
-            sendMessage(obtainMessage(SUCCESS_MESSAGE, new Object[]{new Integer(response.code()), response.headers(), response.body().string()}));
-        } catch (IOException e) {
+            sendMessage(obtainMessage(SUCCESS_MESSAGE, response));
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    protected void sendFailureMessage(Request request, IOException e) {
+    protected void sendFailureMessage(Request request, Exception e) {
         sendMessage(obtainMessage(FAILURE_MESSAGE, new Object[]{e, request}));
     }
 
@@ -112,27 +86,24 @@ public class HttpResponseHandler {
     // Pre-processing of messages (in original calling thread, typically the UI thread)
     //
 
-    protected void handleSuccessMessage(int statusCode, Headers headers, String responseBody) {
-        onSuccess(statusCode, headers, responseBody);
+    protected void handleSuccessMessage(RestApiResponse response) {
+        onSuccess(response);
     }
 
-    protected void handleFailureMessage(Request request, IOException e) {
+    protected void handleFailureMessage(Request request, Exception e) {
         onFailure(request, e);
     }
 
 
     // Methods which emulate android's Handler and Message methods
     protected void handleMessage(Message msg) {
-        Object[] response;
-
         switch (msg.what) {
             case SUCCESS_MESSAGE:
-                response = (Object[]) msg.obj;
-                handleSuccessMessage(((Integer) response[0]).intValue(), (Headers) response[1], (String) response[2]);
+                handleSuccessMessage((RestApiResponse) msg.obj);
                 break;
             case FAILURE_MESSAGE:
-                response = (Object[]) msg.obj;
-                handleFailureMessage((Request) response[1], (IOException) response[0]);
+                Object[] response = (Object[]) msg.obj;
+                handleFailureMessage((Request) response[1], (Exception) response[0]);
                 break;
         }
     }
