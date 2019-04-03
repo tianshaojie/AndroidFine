@@ -12,6 +12,7 @@ public class AppContext extends Application {
         app = this;
     }
 
+    //这里为什么要用单例模式？，一个应用只存在一个Application，所以我觉得这里可以不这样写。
     public static synchronized AppContext getInstance() {
         if (app == null) {
             app = new AppContext();
